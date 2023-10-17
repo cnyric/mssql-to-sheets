@@ -1,0 +1,1443 @@
+{
+  "name": "export-to-sheets",
+  "version": "1.0.0",
+  "createdAt": 1697557970667,
+  "system": {
+    "sandwormVersion": "1.56.0",
+    "nodeVersion": "18.17.1",
+    "lockfileVersion": 3,
+    "packageManager": "npm",
+    "packageType": "npm",
+    "packageManagerVersion": "10.2.0"
+  },
+  "configuration": {
+    "includeDev": false,
+    "skipLicenseIssues": false,
+    "skipMetaIssues": false,
+    "showVersions": false,
+    "rootIsShell": false,
+    "loadDataFrom": "registry",
+    "forceBuildLargeTrees": false,
+    "output": [
+      "tree",
+      "treemap",
+      "csv"
+    ]
+  },
+  "rootVulnerabilities": [],
+  "dependencyVulnerabilities": [],
+  "licenseUsage": [
+    {
+      "string": "MIT",
+      "meta": {
+        "categories": {
+          "defaultCategory": "Permissive",
+          "userCategories": []
+        },
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "@azure/abort-controller",
+          "version": "1.1.0"
+        },
+        {
+          "name": "@azure/core-auth",
+          "version": "1.5.0"
+        },
+        {
+          "name": "@azure/core-client",
+          "version": "1.7.3"
+        },
+        {
+          "name": "@azure/core-http-compat",
+          "version": "1.3.0"
+        },
+        {
+          "name": "@azure/core-lro",
+          "version": "2.5.4"
+        },
+        {
+          "name": "@azure/core-paging",
+          "version": "1.5.0"
+        },
+        {
+          "name": "@azure/core-rest-pipeline",
+          "version": "1.12.1"
+        },
+        {
+          "name": "agent-base",
+          "version": "6.0.2"
+        },
+        {
+          "name": "https-proxy-agent",
+          "version": "5.0.1"
+        },
+        {
+          "name": "@azure/core-tracing",
+          "version": "1.0.1"
+        },
+        {
+          "name": "@azure/core-util",
+          "version": "1.5.0"
+        },
+        {
+          "name": "@azure/identity",
+          "version": "2.1.0"
+        },
+        {
+          "name": "define-lazy-prop",
+          "version": "2.0.0"
+        },
+        {
+          "name": "is-docker",
+          "version": "2.2.1"
+        },
+        {
+          "name": "open",
+          "version": "8.4.2"
+        },
+        {
+          "name": "uuid",
+          "version": "8.3.2"
+        },
+        {
+          "name": "@azure/keyvault-keys",
+          "version": "4.7.2"
+        },
+        {
+          "name": "@azure/logger",
+          "version": "1.0.4"
+        },
+        {
+          "name": "@azure/msal-browser",
+          "version": "2.38.2"
+        },
+        {
+          "name": "@azure/msal-common",
+          "version": "13.3.0"
+        },
+        {
+          "name": "@azure/msal-common",
+          "version": "7.6.0"
+        },
+        {
+          "name": "@azure/msal-node",
+          "version": "1.18.3"
+        },
+        {
+          "name": "@tootallnate/once",
+          "version": "2.0.0"
+        },
+        {
+          "name": "abort-controller",
+          "version": "3.0.0"
+        },
+        {
+          "name": "agent-base",
+          "version": "7.1.0"
+        },
+        {
+          "name": "array-buffer-byte-length",
+          "version": "1.0.0"
+        },
+        {
+          "name": "arraybuffer.prototype.slice",
+          "version": "1.0.2"
+        },
+        {
+          "name": "asynckit",
+          "version": "0.4.0"
+        },
+        {
+          "name": "available-typed-arrays",
+          "version": "1.0.5"
+        },
+        {
+          "name": "axios",
+          "version": "1.5.1"
+        },
+        {
+          "name": "axios-ntlm",
+          "version": "1.4.1"
+        },
+        {
+          "name": "backoff",
+          "version": "2.5.0"
+        },
+        {
+          "name": "base64-js",
+          "version": "1.5.1"
+        },
+        {
+          "name": "bignumber.js",
+          "version": "9.1.2"
+        },
+        {
+          "name": "bl",
+          "version": "6.0.7"
+        },
+        {
+          "name": "bluebird",
+          "version": "3.7.2"
+        },
+        {
+          "name": "buffer",
+          "version": "6.0.3"
+        },
+        {
+          "name": "bufferutil",
+          "version": "4.0.8"
+        },
+        {
+          "name": "call-bind",
+          "version": "1.0.2"
+        },
+        {
+          "name": "cheerio",
+          "version": "1.0.0-rc.12"
+        },
+        {
+          "name": "colorette",
+          "version": "2.0.19"
+        },
+        {
+          "name": "combined-stream",
+          "version": "1.0.8"
+        },
+        {
+          "name": "commander",
+          "version": "10.0.1"
+        },
+        {
+          "name": "csvtojson",
+          "version": "2.0.10"
+        },
+        {
+          "name": "dayjs",
+          "version": "1.11.10"
+        },
+        {
+          "name": "debug",
+          "version": "4.3.4"
+        },
+        {
+          "name": "decode-uri-component",
+          "version": "0.4.1"
+        },
+        {
+          "name": "define-data-property",
+          "version": "1.1.1"
+        },
+        {
+          "name": "define-properties",
+          "version": "1.2.1"
+        },
+        {
+          "name": "delayed-stream",
+          "version": "1.0.0"
+        },
+        {
+          "name": "des.js",
+          "version": "1.1.0"
+        },
+        {
+          "name": "dev-null",
+          "version": "0.1.1"
+        },
+        {
+          "name": "dom-serializer",
+          "version": "2.0.0"
+        },
+        {
+          "name": "es-abstract",
+          "version": "1.22.2"
+        },
+        {
+          "name": "es-aggregate-error",
+          "version": "1.0.11"
+        },
+        {
+          "name": "es-set-tostringtag",
+          "version": "2.0.1"
+        },
+        {
+          "name": "es-to-primitive",
+          "version": "1.2.1"
+        },
+        {
+          "name": "es6-iterator",
+          "version": "2.0.3"
+        },
+        {
+          "name": "escalade",
+          "version": "3.1.1"
+        },
+        {
+          "name": "esm",
+          "version": "3.2.25"
+        },
+        {
+          "name": "event-target-shim",
+          "version": "5.0.1"
+        },
+        {
+          "name": "events",
+          "version": "3.3.0"
+        },
+        {
+          "name": "extend",
+          "version": "3.0.2"
+        },
+        {
+          "name": "fast-xml-parser",
+          "version": "4.3.2"
+        },
+        {
+          "name": "fetch-blob",
+          "version": "3.2.0"
+        },
+        {
+          "name": "web-streams-polyfill",
+          "version": "3.2.1"
+        },
+        {
+          "name": "filter-obj",
+          "version": "5.1.0"
+        },
+        {
+          "name": "follow-redirects",
+          "version": "1.15.3"
+        },
+        {
+          "name": "for-each",
+          "version": "0.3.3"
+        },
+        {
+          "name": "form-data",
+          "version": "4.0.0"
+        },
+        {
+          "name": "formdata-node",
+          "version": "5.0.1"
+        },
+        {
+          "name": "formdata-polyfill",
+          "version": "4.0.10"
+        },
+        {
+          "name": "function-bind",
+          "version": "1.1.2"
+        },
+        {
+          "name": "function.prototype.name",
+          "version": "1.1.6"
+        },
+        {
+          "name": "functions-have-names",
+          "version": "1.2.3"
+        },
+        {
+          "name": "get-intrinsic",
+          "version": "1.2.1"
+        },
+        {
+          "name": "get-package-type",
+          "version": "0.1.0"
+        },
+        {
+          "name": "get-symbol-description",
+          "version": "1.0.0"
+        },
+        {
+          "name": "getopts",
+          "version": "2.3.0"
+        },
+        {
+          "name": "globalthis",
+          "version": "1.0.3"
+        },
+        {
+          "name": "gopd",
+          "version": "1.0.1"
+        },
+        {
+          "name": "gtoken",
+          "version": "7.0.1"
+        },
+        {
+          "name": "has",
+          "version": "1.0.4"
+        },
+        {
+          "name": "has-bigints",
+          "version": "1.0.2"
+        },
+        {
+          "name": "has-property-descriptors",
+          "version": "1.0.0"
+        },
+        {
+          "name": "has-proto",
+          "version": "1.0.1"
+        },
+        {
+          "name": "has-symbols",
+          "version": "1.0.3"
+        },
+        {
+          "name": "has-tostringtag",
+          "version": "1.0.0"
+        },
+        {
+          "name": "hour-convert",
+          "version": "1.0.1"
+        },
+        {
+          "name": "htmlparser2",
+          "version": "8.0.2"
+        },
+        {
+          "name": "http-proxy-agent",
+          "version": "5.0.0"
+        },
+        {
+          "name": "https-proxy-agent",
+          "version": "7.0.2"
+        },
+        {
+          "name": "iconv-lite",
+          "version": "0.6.3"
+        },
+        {
+          "name": "internal-slot",
+          "version": "1.0.5"
+        },
+        {
+          "name": "interpret",
+          "version": "2.2.0"
+        },
+        {
+          "name": "is-array-buffer",
+          "version": "3.0.2"
+        },
+        {
+          "name": "is-bigint",
+          "version": "1.0.4"
+        },
+        {
+          "name": "is-boolean-object",
+          "version": "1.1.2"
+        },
+        {
+          "name": "is-callable",
+          "version": "1.2.7"
+        },
+        {
+          "name": "is-core-module",
+          "version": "2.13.0"
+        },
+        {
+          "name": "is-date-object",
+          "version": "1.0.5"
+        },
+        {
+          "name": "is-negative-zero",
+          "version": "2.0.2"
+        },
+        {
+          "name": "is-number-object",
+          "version": "1.0.7"
+        },
+        {
+          "name": "is-regex",
+          "version": "1.1.4"
+        },
+        {
+          "name": "is-shared-array-buffer",
+          "version": "1.0.2"
+        },
+        {
+          "name": "is-stream",
+          "version": "2.0.1"
+        },
+        {
+          "name": "is-string",
+          "version": "1.0.7"
+        },
+        {
+          "name": "is-symbol",
+          "version": "1.0.4"
+        },
+        {
+          "name": "is-typed-array",
+          "version": "1.1.12"
+        },
+        {
+          "name": "is-typedarray",
+          "version": "1.0.0"
+        },
+        {
+          "name": "is-utf8",
+          "version": "0.2.1"
+        },
+        {
+          "name": "is-weakref",
+          "version": "1.0.2"
+        },
+        {
+          "name": "is-wsl",
+          "version": "2.2.0"
+        },
+        {
+          "name": "isarray",
+          "version": "2.0.5"
+        },
+        {
+          "name": "js-md4",
+          "version": "0.3.2"
+        },
+        {
+          "name": "json-bigint",
+          "version": "1.0.0"
+        },
+        {
+          "name": "jsonparse",
+          "version": "1.3.1"
+        },
+        {
+          "name": "jsonwebtoken",
+          "version": "9.0.2"
+        },
+        {
+          "name": "jwa",
+          "version": "1.4.1"
+        },
+        {
+          "name": "jws",
+          "version": "3.2.2"
+        },
+        {
+          "name": "jwa",
+          "version": "2.0.0"
+        },
+        {
+          "name": "jws",
+          "version": "4.0.0"
+        },
+        {
+          "name": "knex",
+          "version": "3.0.1"
+        },
+        {
+          "name": "resolve-from",
+          "version": "5.0.0"
+        },
+        {
+          "name": "lodash",
+          "version": "4.17.21"
+        },
+        {
+          "name": "lodash.includes",
+          "version": "4.3.0"
+        },
+        {
+          "name": "lodash.isboolean",
+          "version": "3.0.3"
+        },
+        {
+          "name": "lodash.isinteger",
+          "version": "4.0.4"
+        },
+        {
+          "name": "lodash.isnumber",
+          "version": "3.0.3"
+        },
+        {
+          "name": "lodash.isplainobject",
+          "version": "4.0.6"
+        },
+        {
+          "name": "lodash.isstring",
+          "version": "4.0.1"
+        },
+        {
+          "name": "lodash.once",
+          "version": "4.1.1"
+        },
+        {
+          "name": "mime-db",
+          "version": "1.52.0"
+        },
+        {
+          "name": "mime-types",
+          "version": "2.1.35"
+        },
+        {
+          "name": "ms",
+          "version": "2.1.2"
+        },
+        {
+          "name": "native-duplexpair",
+          "version": "1.0.0"
+        },
+        {
+          "name": "node-abort-controller",
+          "version": "3.1.1"
+        },
+        {
+          "name": "node-domexception",
+          "version": "1.0.0"
+        },
+        {
+          "name": "node-fetch",
+          "version": "2.7.0"
+        },
+        {
+          "name": "node-gyp-build",
+          "version": "4.6.1"
+        },
+        {
+          "name": "nylas",
+          "version": "6.10.0"
+        },
+        {
+          "name": "object-inspect",
+          "version": "1.13.0"
+        },
+        {
+          "name": "object-keys",
+          "version": "1.1.1"
+        },
+        {
+          "name": "object.assign",
+          "version": "4.1.4"
+        },
+        {
+          "name": "papaparse",
+          "version": "5.4.1"
+        },
+        {
+          "name": "parse5",
+          "version": "7.1.2"
+        },
+        {
+          "name": "parse5-htmlparser2-tree-adapter",
+          "version": "7.0.0"
+        },
+        {
+          "name": "path-parse",
+          "version": "1.0.7"
+        },
+        {
+          "name": "pg-connection-string",
+          "version": "2.6.1"
+        },
+        {
+          "name": "process",
+          "version": "0.11.10"
+        },
+        {
+          "name": "proxy-from-env",
+          "version": "1.1.0"
+        },
+        {
+          "name": "psl",
+          "version": "1.9.0"
+        },
+        {
+          "name": "punycode",
+          "version": "2.3.0"
+        },
+        {
+          "name": "query-string",
+          "version": "8.1.0"
+        },
+        {
+          "name": "querystringify",
+          "version": "2.2.0"
+        },
+        {
+          "name": "readable-stream",
+          "version": "4.4.2"
+        },
+        {
+          "name": "rechoir",
+          "version": "0.8.0"
+        },
+        {
+          "name": "regexp.prototype.flags",
+          "version": "1.5.1"
+        },
+        {
+          "name": "requires-port",
+          "version": "1.0.0"
+        },
+        {
+          "name": "resolve",
+          "version": "1.22.8"
+        },
+        {
+          "name": "safe-array-concat",
+          "version": "1.0.1"
+        },
+        {
+          "name": "safe-buffer",
+          "version": "5.2.1"
+        },
+        {
+          "name": "safe-regex-test",
+          "version": "1.0.0"
+        },
+        {
+          "name": "safer-buffer",
+          "version": "2.1.2"
+        },
+        {
+          "name": "set-function-name",
+          "version": "2.0.1"
+        },
+        {
+          "name": "side-channel",
+          "version": "1.0.4"
+        },
+        {
+          "name": "split-on-first",
+          "version": "3.0.0"
+        },
+        {
+          "name": "stoppable",
+          "version": "1.1.0"
+        },
+        {
+          "name": "string_decoder",
+          "version": "1.3.0"
+        },
+        {
+          "name": "string.prototype.trim",
+          "version": "1.2.8"
+        },
+        {
+          "name": "string.prototype.trimend",
+          "version": "1.0.7"
+        },
+        {
+          "name": "string.prototype.trimstart",
+          "version": "1.0.7"
+        },
+        {
+          "name": "strip-bom",
+          "version": "2.0.0"
+        },
+        {
+          "name": "strnum",
+          "version": "1.0.5"
+        },
+        {
+          "name": "supports-preserve-symlinks-flag",
+          "version": "1.0.0"
+        },
+        {
+          "name": "tarn",
+          "version": "3.0.2"
+        },
+        {
+          "name": "tedious",
+          "version": "16.5.0"
+        },
+        {
+          "name": "through",
+          "version": "2.3.8"
+        },
+        {
+          "name": "tildify",
+          "version": "2.0.0"
+        },
+        {
+          "name": "tr46",
+          "version": "0.0.3"
+        },
+        {
+          "name": "tslog",
+          "version": "4.9.2"
+        },
+        {
+          "name": "typed-array-buffer",
+          "version": "1.0.0"
+        },
+        {
+          "name": "typed-array-byte-length",
+          "version": "1.0.0"
+        },
+        {
+          "name": "typed-array-byte-offset",
+          "version": "1.0.0"
+        },
+        {
+          "name": "typed-array-length",
+          "version": "1.0.4"
+        },
+        {
+          "name": "typedarray-to-buffer",
+          "version": "3.1.5"
+        },
+        {
+          "name": "unbox-primitive",
+          "version": "1.0.2"
+        },
+        {
+          "name": "universalify",
+          "version": "0.2.0"
+        },
+        {
+          "name": "url-parse",
+          "version": "1.5.10"
+        },
+        {
+          "name": "utf-8-validate",
+          "version": "5.0.10"
+        },
+        {
+          "name": "uuid",
+          "version": "9.0.1"
+        },
+        {
+          "name": "web-streams-polyfill",
+          "version": "4.0.0-beta.3"
+        },
+        {
+          "name": "debug",
+          "version": "2.6.9"
+        },
+        {
+          "name": "ms",
+          "version": "2.0.0"
+        },
+        {
+          "name": "whatwg-url",
+          "version": "5.0.0"
+        },
+        {
+          "name": "which-boxed-primitive",
+          "version": "1.0.2"
+        },
+        {
+          "name": "which-typed-array",
+          "version": "1.1.11"
+        },
+        {
+          "name": "yaeti",
+          "version": "0.0.6"
+        }
+      ]
+    },
+    {
+      "string": "ISC",
+      "meta": {
+        "categories": {
+          "defaultCategory": "Permissive",
+          "userCategories": []
+        },
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "boolbase",
+          "version": "1.0.0"
+        },
+        {
+          "name": "d",
+          "version": "1.0.1"
+        },
+        {
+          "name": "es5-ext",
+          "version": "0.10.62"
+        },
+        {
+          "name": "es6-symbol",
+          "version": "3.1.3"
+        },
+        {
+          "name": "ext",
+          "version": "1.7.0"
+        },
+        {
+          "name": "type",
+          "version": "2.7.2"
+        },
+        {
+          "name": "inherits",
+          "version": "2.0.4"
+        },
+        {
+          "name": "lru-cache",
+          "version": "6.0.0"
+        },
+        {
+          "name": "minimalistic-assert",
+          "version": "1.0.1"
+        },
+        {
+          "name": "next-tick",
+          "version": "1.1.0"
+        },
+        {
+          "name": "semver",
+          "version": "7.5.4"
+        },
+        {
+          "name": "type",
+          "version": "1.2.0"
+        },
+        {
+          "name": "yallist",
+          "version": "4.0.0"
+        }
+      ]
+    },
+    {
+      "string": "BSD-2-Clause",
+      "meta": {
+        "categories": {
+          "defaultCategory": "Permissive",
+          "userCategories": []
+        },
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "cheerio-select",
+          "version": "2.1.0"
+        },
+        {
+          "name": "css-select",
+          "version": "5.1.0"
+        },
+        {
+          "name": "css-what",
+          "version": "6.1.0"
+        },
+        {
+          "name": "domelementtype",
+          "version": "2.3.0"
+        },
+        {
+          "name": "domhandler",
+          "version": "5.0.3"
+        },
+        {
+          "name": "domutils",
+          "version": "3.1.0"
+        },
+        {
+          "name": "dotenv",
+          "version": "16.3.1"
+        },
+        {
+          "name": "entities",
+          "version": "4.5.0"
+        },
+        {
+          "name": "nth-check",
+          "version": "2.1.1"
+        },
+        {
+          "name": "webidl-conversions",
+          "version": "3.0.1"
+        }
+      ]
+    },
+    {
+      "string": "Apache-2.0",
+      "meta": {
+        "categories": {
+          "defaultCategory": "Permissive",
+          "userCategories": []
+        },
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "ecdsa-sig-formatter",
+          "version": "1.0.11"
+        },
+        {
+          "name": "gaxios",
+          "version": "6.1.1"
+        },
+        {
+          "name": "gcp-metadata",
+          "version": "6.0.0"
+        },
+        {
+          "name": "google-auth-library",
+          "version": "9.1.0"
+        },
+        {
+          "name": "googleapis",
+          "version": "126.0.1"
+        },
+        {
+          "name": "googleapis-common",
+          "version": "7.0.0"
+        },
+        {
+          "name": "jsbi",
+          "version": "4.3.0"
+        },
+        {
+          "name": "websocket",
+          "version": "1.0.34"
+        }
+      ]
+    },
+    {
+      "string": "BSD-3-Clause",
+      "meta": {
+        "categories": {
+          "defaultCategory": "Permissive",
+          "userCategories": []
+        },
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "@js-joda/core",
+          "version": "5.6.1"
+        },
+        {
+          "name": "buffer-equal-constant-time",
+          "version": "1.0.1"
+        },
+        {
+          "name": "ieee754",
+          "version": "1.2.1"
+        },
+        {
+          "name": "qs",
+          "version": "6.11.2"
+        },
+        {
+          "name": "sprintf-js",
+          "version": "1.1.3"
+        },
+        {
+          "name": "tough-cookie",
+          "version": "4.1.3"
+        }
+      ]
+    },
+    {
+      "string": "(MIT OR Apache-2.0)",
+      "meta": {
+        "categories": {
+          "defaultCategory": "Permissive",
+          "userCategories": []
+        },
+        "isSpdxExpression": true
+      },
+      "dependencies": [
+        {
+          "name": "JSONStream",
+          "version": "1.3.5"
+        }
+      ]
+    },
+    {
+      "string": "N/A",
+      "meta": {
+        "categories": {
+          "defaultCategory": "N/A",
+          "userCategories": []
+        },
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "precond",
+          "version": "0.2.3"
+        }
+      ]
+    },
+    {
+      "string": "0BSD",
+      "meta": {
+        "categories": {
+          "defaultCategory": "Permissive",
+          "userCategories": []
+        },
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "tslib",
+          "version": "2.6.2"
+        }
+      ]
+    },
+    {
+      "string": "BSD",
+      "meta": {
+        "categories": {
+          "defaultCategory": "Invalid",
+          "userCategories": []
+        },
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "url-template",
+          "version": "2.0.8"
+        }
+      ]
+    }
+  ],
+  "licenseIssues": [
+    {
+      "name": "precond",
+      "version": "0.2.3",
+      "severity": "critical",
+      "title": "Package has no specified license",
+      "shortTitle": "No license specified",
+      "recommendation": "Check the package code and files for license information",
+      "sandwormIssueCode": 100,
+      "sandwormIssueId": "SWRM-100-precond-0.2.3",
+      "findings": {
+        "sources": [
+          {
+            "name": "precond",
+            "version": "0.2.3",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "nylas",
+            "version": "6.10.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "backoff",
+            "version": "2.5.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "precond",
+            "version": "0.2.3",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "nylas",
+            "version": "6.10.0",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "nylas>backoff>precond"
+        ]
+      },
+      "type": "license"
+    },
+    {
+      "name": "url-template",
+      "version": "2.0.8",
+      "severity": "low",
+      "title": "Package uses a license that is not OSI approved (\"BSD\")",
+      "shortTitle": "License not OSI approved",
+      "recommendation": "Read and validate the license terms",
+      "sandwormIssueCode": 102,
+      "sandwormIssueId": "SWRM-102-url-template-2.0.8",
+      "findings": {
+        "sources": [
+          {
+            "name": "url-template",
+            "version": "2.0.8",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "googleapis",
+            "version": "126.0.1",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "googleapis-common",
+            "version": "7.0.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "url-template",
+            "version": "2.0.8",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "googleapis",
+            "version": "126.0.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "googleapis>googleapis-common>url-template"
+        ]
+      },
+      "type": "license"
+    },
+    {
+      "name": "url-template",
+      "version": "2.0.8",
+      "severity": "high",
+      "title": "Package uses an invalid SPDX license (\"BSD\")",
+      "shortTitle": "Invalid SPDX license",
+      "recommendation": "Validate that the package complies with your license policy",
+      "sandwormIssueCode": 105,
+      "sandwormIssueId": "SWRM-105-url-template-2.0.8",
+      "findings": {
+        "sources": [
+          {
+            "name": "url-template",
+            "version": "2.0.8",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "googleapis",
+            "version": "126.0.1",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "googleapis-common",
+            "version": "7.0.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "url-template",
+            "version": "2.0.8",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "googleapis",
+            "version": "126.0.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "googleapis>googleapis-common>url-template"
+        ]
+      },
+      "type": "license"
+    }
+  ],
+  "metaIssues": [
+    {
+      "severity": "high",
+      "title": "Package uses install script: \"node-gyp-build\"",
+      "shortTitle": "Uses install script",
+      "name": "bufferutil",
+      "version": "4.0.8",
+      "sandwormIssueCode": 201,
+      "sandwormIssueSpecifier": "install",
+      "sandwormIssueId": "SWRM-201-bufferutil-4.0.8-install",
+      "findings": {
+        "sources": [
+          {
+            "name": "bufferutil",
+            "version": "4.0.8",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "nylas",
+            "version": "6.10.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "websocket",
+            "version": "1.0.34",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "bufferutil",
+            "version": "4.0.8",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "nylas",
+            "version": "6.10.0",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "nylas>websocket>bufferutil"
+        ]
+      },
+      "type": "meta"
+    },
+    {
+      "severity": "high",
+      "title": "Package uses postinstall script: \" node -e \"try{require('./_postinstall')}catch(e){}\" || exit 0\"",
+      "shortTitle": "Uses postinstall script",
+      "name": "es5-ext",
+      "version": "0.10.62",
+      "sandwormIssueCode": 201,
+      "sandwormIssueSpecifier": "postinstall",
+      "sandwormIssueId": "SWRM-201-es5-ext-0.10.62-postinstall",
+      "findings": {
+        "sources": [
+          {
+            "name": "es5-ext",
+            "version": "0.10.62",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "nylas",
+            "version": "6.10.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "websocket",
+            "version": "1.0.34",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "es5-ext",
+            "version": "0.10.62",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "nylas",
+            "version": "6.10.0",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "nylas>websocket>es5-ext"
+        ]
+      },
+      "type": "meta"
+    },
+    {
+      "severity": "high",
+      "title": "Package uses install script: \"node-gyp-build\"",
+      "shortTitle": "Uses install script",
+      "name": "utf-8-validate",
+      "version": "5.0.10",
+      "sandwormIssueCode": 201,
+      "sandwormIssueSpecifier": "install",
+      "sandwormIssueId": "SWRM-201-utf-8-validate-5.0.10-install",
+      "findings": {
+        "sources": [
+          {
+            "name": "utf-8-validate",
+            "version": "5.0.10",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "nylas",
+            "version": "6.10.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "websocket",
+            "version": "1.0.34",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "utf-8-validate",
+            "version": "5.0.10",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "nylas",
+            "version": "6.10.0",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "nylas>websocket>utf-8-validate"
+        ]
+      },
+      "type": "meta"
+    }
+  ],
+  "resolvedIssues": [],
+  "errors": []
+}
