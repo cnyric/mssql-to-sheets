@@ -1,6 +1,7 @@
-import type { SheetInfo } from '../../types.js';
+import type { SheetInfo } from './types.d.ts';
 
-import sheets from './client.js';
+import { append, update } from './client.js';
+import headerRow from './headerRow.js';
 import { errorHandler } from '../util.js';
 
 async function updateSheet(spreadsheet: SheetInfo, sheetId: number, sheetName: string, data: any[]): Promise<void> {
@@ -8,8 +9,7 @@ async function updateSheet(spreadsheet: SheetInfo, sheetId: number, sheetName: s
     const headers = Object.keys(data[0]).filter(key => key !== 'ID');
     const spreadsheetId = <string>spreadsheet.data.spreadsheetId;
 
-    // set column headers
-    await sheets.spreadsheets.values.append({
+    await append({
       spreadsheetId,
       range: sheetName,
       valueInputOption: 'USER_ENTERED',
@@ -19,8 +19,7 @@ async function updateSheet(spreadsheet: SheetInfo, sheetId: number, sheetName: s
       }
     });
 
-    // append data
-    await sheets.spreadsheets.values.append({
+    await append({
       spreadsheetId,
       range: sheetName,
       valueInputOption: 'USER_ENTERED',
@@ -32,56 +31,7 @@ async function updateSheet(spreadsheet: SheetInfo, sheetId: number, sheetName: s
       }
     });
 
-    // format headers
-    const query = {
-      spreadsheetId,
-      requestBody: {
-        requests: [
-          {
-            repeatCell: {
-              range: {
-                sheetId,
-                startRowIndex: 0,
-                endRowIndex: 1
-              },
-              cell: {
-                userEnteredFormat: {
-                  backgroundColor: {
-                    red: 0.0,
-                    green: 0.0,
-                    blue: 0.0
-                  },
-                  horizontalAlignment: 'CENTER',
-                  textFormat: {
-                    foregroundColor: {
-                      red: 1.0,
-                      green: 1.0,
-                      blue: 1.0
-                    },
-                    fontSize: 12,
-                    bold: true
-                  }
-                }
-              },
-              fields: 'userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)'
-            }
-          },
-          {
-            updateSheetProperties: {
-              properties: {
-                sheetId,
-                gridProperties: {
-                  frozenRowCount: 1
-                }
-              },
-              fields: 'gridProperties.frozenRowCount'
-            }
-          }
-        ]
-      }
-    };
-
-    await sheets.spreadsheets.batchUpdate(query);
+    await update(headerRow(spreadsheetId, sheetId));
   } catch (err) {
     await errorHandler(<Error>err, 'updateSheet');
   }

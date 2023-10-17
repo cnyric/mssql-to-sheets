@@ -1,22 +1,18 @@
-import type { SheetInfo, SheetProperties } from '../../types.js';
+import type { SheetInfo, SheetProperties } from './types.d.ts';
 
-import dayjs from 'dayjs';
-
-import sheets from './client.js';
-import { errorHandler } from '../util.js';
-
-const today = dayjs().format('YYYY_MM_DD');
+import { get, update } from './client.js';
+import { errorHandler, today } from '../util.js';
 
 async function getOrAddSheet(spreadsheetId: string, sheetName: string): Promise<[SheetInfo, SheetProperties[]] | void> {
   try {
     const title = `${sheetName}_${today}`;
 
-    const sheet = await sheets.spreadsheets.get({
+    const sheet = await get({
       spreadsheetId
     });
 
     if (!sheet.data.sheets?.find(sheet => sheet.properties?.title === title)) {
-      const pages = await sheets.spreadsheets.batchUpdate({
+      const query = {
         spreadsheetId,
         requestBody: {
           requests: [
@@ -29,7 +25,9 @@ async function getOrAddSheet(spreadsheetId: string, sheetName: string): Promise<
             }
           ]
         }
-      });
+      };
+
+      const pages = await update(query);
 
       return [sheet, <SheetProperties[]>pages.data.replies?.map(reply => reply.addSheet?.properties)];
     } else {

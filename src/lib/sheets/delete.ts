@@ -1,5 +1,6 @@
-import type { SheetInfo } from '../../types.js';
-import sheets from './client.js';
+import type { SheetInfo } from './types.d.ts';
+
+import { update } from './client.js';
 import { errorHandler } from '../util.js';
 
 async function deleteSheet(spreadsheet: SheetInfo, sheetId: number): Promise<void> {
@@ -19,7 +20,7 @@ async function deleteSheet(spreadsheet: SheetInfo, sheetId: number): Promise<voi
       }
     };
 
-    await sheets.spreadsheets.batchUpdate(query);
+    await update(query);
   } catch (err) {
     await errorHandler(<Error>err, 'deleteSheet');
   }
