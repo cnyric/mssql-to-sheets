@@ -1,11 +1,11 @@
 import type { SheetInfo, SheetProperties } from './types.d.ts';
 
 import { get, update } from './client.js';
-import { errorHandler, today } from '../util.js';
+import { errorHandler, setTitle } from '../util.js';
 
 async function getOrAddSheet(spreadsheetId: string, sheetName: string): Promise<[SheetInfo, SheetProperties[]] | void> {
   try {
-    const title = `${sheetName}_${today}`;
+    const title = setTitle(sheetName);
 
     const sheet = await get({
       spreadsheetId
