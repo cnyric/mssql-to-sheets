@@ -1,15 +1,16 @@
 import status from 'http-status';
-import { errorHandler as logError } from '../common/util.js';
+import { log, errorHandler as logError } from '../common/util.js';
 
-async function errorHandler(err: Error, req: any, res: any, next: any) {
-  await logError(err, 'web-service', false);
+async function errorHandler(err: Error, req: any, res: any) {
+  await logError(err, 'webService');
 
-  if (res.headersSent) {
-    return next(err);
+  if (err.message.includes('required') || err.message.includes('invalid')) {
+    res.statusCode = 400;
+    return res.end(JSON.stringify({ status: status[400], message: err.message }));
+  } else {
+    res.statusCode = 500;
+    res.end(JSON.stringify({ status: status[500], message: err.message, stack: err.stack }));
   }
-
-  res.statusCode = 500;
-  res.end(JSON.stringify({ status: status[500], message: err.message, stack: err.stack }));
 }
 
 export default errorHandler;

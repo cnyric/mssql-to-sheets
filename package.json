@@ -24,6 +24,7 @@
     "csvtojson": "^2.0.10",
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
+    "execa": "^8.0.1",
     "fast-xml-parser": "^4.3.2",
     "formdata-node": "^5.0.1",
     "formdata-polyfill": "^4.0.10",
@@ -38,7 +39,8 @@
     "query-string": "^8.1.0",
     "tar": "^6.2.0",
     "tedious": "^16.5.0",
-    "tslog": "^4.9.2"
+    "tslog": "^4.9.2",
+    "tsqllint": "^1.15.3"
   },
   "devDependencies": {
     "@types/node": "^18.17.1",

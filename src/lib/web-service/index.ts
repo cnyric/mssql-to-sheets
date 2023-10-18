@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 
 import routes from './routes.js';
 import logger from './logger.js';
-import errorHandler from './errors.js';
 
 function presets(req: any, res: any, next: any) {
   res.setHeader('Content-Type', 'application/json');
@@ -11,7 +10,6 @@ function presets(req: any, res: any, next: any) {
 }
 
 const service = polka().use(bodyParser.json(), logger, presets);
-service.server?.on('error', errorHandler);
 routes(service);
 
 export default service;

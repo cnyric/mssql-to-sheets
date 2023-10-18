@@ -1,10 +1,13 @@
 interface Job {
+  [key: string]: any;
+
   id?: string;
   name: string;
   active?: boolean;
   spreadsheetId: string;
   database: string;
   schedule: string;
+  append?: boolean;
   lastRun?: string;
   createdAt?: string;
   updatedAt?: string;

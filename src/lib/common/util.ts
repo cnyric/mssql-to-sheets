@@ -25,6 +25,22 @@ function setTitle(text: string) {
   return `${text}_${today}`;
 }
 
+/** # `checkForRequired`
+ * Check if a required property is present in an object and throw an error if it is not.
+ * @param obj - The object to check.
+ * @param prop - The name of the property to check.
+ * @param msg - The message to use if the property is not present.
+ * @throws An error if the property is not present.
+ * @returns The value of the property.
+ */
+function checkForRequired<T, K extends keyof T>(obj: Partial<T>, prop: K, msg?: string): T[K] {
+  if (obj[prop] === undefined || obj[prop] === null) {
+    throw new Error(msg || `\`${prop.toString()}\` is required`);
+  } else {
+    return obj[prop] as T[K];
+  }
+}
+
 /** # `errorHandler`
  * The function first writes a log message to a file specified by the `ERROR_LOG_PATH` environment variable, then logs
  * the error message to the console. Finally, it exits the Node.js process.
@@ -32,16 +48,12 @@ function setTitle(text: string) {
  * @param source - The source of the error.
  * @param exit - Whether or not to exit the Node.js process. Defaults to `true`.
  */
-async function errorHandler(error: Error, source: string, exit: boolean = true) {
+async function errorHandler(error: Error, source: string) {
   await writeFile(<string>process.env['ERROR_LOG_PATH'], `${dayjs().format()}: ${source} - ${error.message}\n`, {
     flag: 'a'
   });
 
   log.error(source, error.message);
-
-  if (exit) {
-    process.exit(1);
-  }
 }
 
-export { log, today, errorHandler, setTitle };
+export { log, today, checkForRequired, errorHandler, setTitle };

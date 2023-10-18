@@ -3,21 +3,51 @@ import type { Job } from '../../types.d.ts';
 
 import dayjs from 'dayjs';
 import { nanoid } from 'nanoid';
+import { writeFile, unlink } from 'fs/promises';
+import { execa } from 'execa';
+import { tmpdir } from 'os';
 
+import insertSheet from '../sheets/index.js';
 import store from '../common/store.js';
-import { log } from '../common/util.js';
+import { log, checkForRequired } from '../common/util.js';
+import db from '../common/db.js';
 
 // add job
-async function addJob(job: Job) {
-  const now = dayjs().format();
+async function addJob(job: Job): Promise<Job | Error> {
+  ['name', 'spreadsheetId', 'database', 'schedule', 'tasks'].forEach(v => {
+    checkForRequired(job, v);
+  });
+
+  if (job.tasks.length === 0) {
+    throw new Error(`\`tasks\` definitions are required`);
+  }
+
   job.id = nanoid(18);
-  job.active = true;
+  job.active = job.active ?? true;
+  job.append = job.append ?? false;
+
+  const now = dayjs().format();
   job.createdAt = now;
   job.updatedAt = now;
-  job.tasks = job.tasks.map(task => {
+
+  let tasks = [];
+  for (const task of job.tasks) {
     task.id = nanoid(18);
-    return task;
-  });
+
+    if (task.query.startsWith('http')) {
+      task.query = await (await fetch(task.query)).text();
+    }
+
+    const tmpFile = `/${tmpdir()}/${task.id}.sql`;
+    log.debug('addJob', tmpFile);
+    await writeFile(tmpFile, task.query);
+    await execa(`tsqllint`, [tmpFile]);
+    await unlink(tmpFile);
+
+    tasks.push(task);
+  }
+  job.tasks = tasks;
+
   log.debug('addJob', job);
   await store.set(job.id, job);
   return job;
@@ -71,11 +101,24 @@ async function getJob(jobId?: string): Promise<Job | Job[] | void> {
 // do job
 async function doJob(job: Job) {
   log.debug('doJob', job.id);
-  await Promise.all(
-    job.tasks.map(task => {
-      log.debug('doJob', task.id);
-    })
-  );
+  if (job.active) {
+    await Promise.all(
+      job.tasks.map(async task => {
+        const data = await db(job.database).raw(task.query);
+        await insertSheet(job.spreadsheetId, job.name, data, job.append);
+        job.lastRun = dayjs().format();
+        await editJob(<string>job.id, job);
+        log.debug(
+          'doJob',
+          task.id,
+          `\`https://docs.google.com/spreadsheets/d/${job.spreadsheetId}/\` updated successfully`
+        );
+        return job;
+      })
+    );
+  } else {
+    return false;
+  }
 }
 
 export { addJob, editJob, toggleJob, delJob, getJob, doJob };
