@@ -1,7 +1,7 @@
 import type { SheetInfo } from './types.d.ts';
 
 import { update } from './client.js';
-import { errorHandler } from '../util.js';
+import { errorHandler } from '../common/util.js';
 
 async function deleteSheet(spreadsheet: SheetInfo, sheetId: number): Promise<void> {
   try {

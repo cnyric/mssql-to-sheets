@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 
 import service from './lib/service/index.js';
-import { log, errorHandler } from './lib/util.js';
+import { log, errorHandler } from './lib/common/util.js';
 
 try {
   config();

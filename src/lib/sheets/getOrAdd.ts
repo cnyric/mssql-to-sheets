@@ -1,7 +1,7 @@
 import type { SheetInfo, SheetProperties } from './types.d.ts';
 
 import { get, update } from './client.js';
-import { errorHandler, setTitle } from '../util.js';
+import { errorHandler, setTitle } from '../common/util.js';
 
 async function getOrAddSheet(spreadsheetId: string, sheetName: string): Promise<[SheetInfo, SheetProperties[]] | void> {
   try {

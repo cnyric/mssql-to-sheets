@@ -1,6 +1,6 @@
 import status from 'http-status';
 
-import { log } from '../util.js';
+import { log } from '../common/util.js';
 
 function logger(req: any, res: any, next: any) {
   res.on('finish', () => {

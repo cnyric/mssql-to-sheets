@@ -2,7 +2,7 @@ import type { SheetInfo } from './types.d.ts';
 
 import { append, update } from './client.js';
 import headerRow from './headerRow.js';
-import { errorHandler } from '../util.js';
+import { errorHandler } from '../common/util.js';
 
 async function updateSheet(spreadsheet: SheetInfo, sheetId: number, sheetName: string, data: any[]): Promise<void> {
   try {

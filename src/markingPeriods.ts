@@ -2,9 +2,9 @@ import type { MarkingPeriod, Progress } from './types.js';
 
 import { config } from 'dotenv';
 
-import db from './lib/db.js';
+import db from './lib/common/db.js';
 import insertSheet from './lib/sheets/index.js';
-import { log } from './lib/util.js';
+import { log } from './lib/common/util.js';
 
 config();
 

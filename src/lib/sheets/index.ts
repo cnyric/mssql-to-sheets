@@ -1,7 +1,7 @@
 import getOrAddSheet from './getOrAdd.js';
 import updateSheet from './update.js';
 import deleteSheet from './delete.js';
-import { setTitle, today } from '../util.js';
+import { setTitle, today } from '../common/util.js';
 
 async function insertSheet(spreadsheetId: string, sheetName: string, data: any[], deleteOld: boolean = false) {
   const sheet = await getOrAddSheet(spreadsheetId, sheetName);
