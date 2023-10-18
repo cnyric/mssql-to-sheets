@@ -6,6 +6,8 @@ interface Job {
   database: string;
   schedule: string;
   lastRun?: string;
+  createdAt?: string;
+  updatedAt?: string;
   email?: string;
   tasks: Task[];
 }

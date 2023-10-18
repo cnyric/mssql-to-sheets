@@ -1,6 +1,7 @@
 import type { DeserializedData } from '@keyvhq/core';
 import type { Job } from '../../types.d.ts';
 
+import dayjs from 'dayjs';
 import { nanoid } from 'nanoid';
 
 import store from '../common/store.js';
@@ -8,34 +9,46 @@ import { log } from '../common/util.js';
 
 // add job
 async function addJob(job: Job) {
+  const now = dayjs().format();
   job.id = nanoid(18);
   job.active = true;
+  job.createdAt = now;
+  job.updatedAt = now;
   job.tasks = job.tasks.map(task => {
     task.id = nanoid(18);
     return task;
   });
   log.debug('addJob', job);
-  return await store.set(job.id, job);
+  await store.set(job.id, job);
+  return job;
 }
 
 // delete job
 async function delJob(jobId: string) {
   log.debug('delJob', jobId);
-  store.delete(jobId);
+  await store.delete(jobId);
+  return {
+    id: jobId,
+    deletedAt: dayjs().format()
+  };
 }
 
 // edit job
 async function editJob(jobId: string, job: Job) {
+  job.updatedAt = dayjs().format();
   log.debug('editJob', jobId, job);
-  return await store.set(jobId, job);
+  await store.set(jobId, job);
+  return job;
 }
 
 // toggle job
 async function toggleJob(jobId: string) {
   const job = <Job>await store.get(jobId);
   job.active = !job.active;
+  job.updatedAt = dayjs().format();
   log.debug('toggleJob', jobId, job.active);
-  return await store.set(jobId, job);
+  await store.set(jobId, job);
+  return job;
 }
 
 // get job(s)

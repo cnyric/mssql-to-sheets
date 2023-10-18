@@ -13,6 +13,7 @@ function routes(service: Polka) {
 
   // add job
   service.post('/jobs', async (req, res) => {
+    res.statusCode = 201;
     res.end(JSON.stringify(await addJob(req.body)));
   });
 
@@ -28,22 +29,26 @@ function routes(service: Polka) {
 
   // edit job
   service.put('/jobs/:id', async (req, res) => {
+    res.statusCode = 202;
     res.end(JSON.stringify(await editJob(req.params.id, req.body)));
   });
 
   // toggle job
   service.put('/jobs/:id/toggle', async (req, res) => {
+    res.statusCode = 202;
     res.end(JSON.stringify(await toggleJob(req.params.id)));
   });
 
   // execute job
   service.put('/jobs/:id/exec', async (req, res) => {
+    res.statusCode = 202;
     const job = <Job>await getJob(req.params.id);
     res.end(JSON.stringify(await doJob(job)));
   });
 
   // delete job
   service.delete('/jobs/:id', async (req, res) => {
+    res.statusCode = 202;
     res.end(JSON.stringify(await delJob(req.params.id)));
   });
 

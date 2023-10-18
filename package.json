@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "nodemon",
     "postinstall": "sandworm-audit",
-    "test": "hurl --test test.hurl",
+    "test": "hurl --test tests/*.hurl",
     "build": "rm -rf dist; tsc"
   },
   "dependencies": {
