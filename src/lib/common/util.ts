@@ -12,7 +12,7 @@ function setTitle(text: string) {
 }
 
 async function errorHandler(error: Error, source: string) {
-  await writeFile(<string>process.env.ERROR_LOG_PATH, `${dayjs().format()}: ${source} - ${error.message}\n`, {
+  await writeFile(<string>process.env['ERROR_LOG_PATH'], `${dayjs().format()}: ${source} - ${error.message}\n`, {
     flag: 'a'
   });
   log.error(source, error.message);

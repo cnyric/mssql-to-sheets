@@ -1,4 +1,4 @@
-import type { SheetInfo, SheetProperties } from './types.d.ts';
+import type { SheetInfo, SheetProperties } from './types.js';
 
 import { get, update } from './client.js';
 import { errorHandler, setTitle } from '../common/util.js';

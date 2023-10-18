@@ -1,12 +1,11 @@
-import { config } from 'dotenv';
-
-import service from './lib/service/index.js';
+import service from './lib/web-service/index.js';
 import { log, errorHandler } from './lib/common/util.js';
+import loadEnv from './lib/common/env.js';
 
 try {
-  config();
+  loadEnv();
 
-  const port = process.env.PORT ?? 3000;
+  const port = process.env['PORT'] ?? 3000;
 
   service.listen(port, () => {
     log.info(`Server started on port ${port}`);

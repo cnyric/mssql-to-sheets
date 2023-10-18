@@ -1,4 +1,4 @@
-import getOrAddSheet from './getOrAdd.js';
+import getOrAddSheet from './get-or-add.js';
 import updateSheet from './update.js';
 import deleteSheet from './delete.js';
 import { setTitle, today } from '../common/util.js';
