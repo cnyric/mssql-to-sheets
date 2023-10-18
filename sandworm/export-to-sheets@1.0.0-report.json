@@ -1,7 +1,7 @@
 {
   "name": "export-to-sheets",
   "version": "1.0.0",
-  "createdAt": 1697557970667,
+  "createdAt": 1697595301307,
   "system": {
     "sandwormVersion": "1.56.0",
     "nodeVersion": "18.17.1",
@@ -37,6 +37,10 @@
         "isSpdxExpression": false
       },
       "dependencies": [
+        {
+          "name": "@arr/every",
+          "version": "1.0.1"
+        },
         {
           "name": "@azure/abort-controller",
           "version": "1.1.0"
@@ -126,8 +130,28 @@
           "version": "1.18.3"
         },
         {
+          "name": "@keyvhq/core",
+          "version": "2.1.0"
+        },
+        {
+          "name": "@keyvhq/sql",
+          "version": "2.0.0"
+        },
+        {
+          "name": "@keyvhq/sqlite",
+          "version": "2.1.0"
+        },
+        {
+          "name": "@polka/url",
+          "version": "0.5.0"
+        },
+        {
           "name": "@tootallnate/once",
           "version": "2.0.0"
+        },
+        {
+          "name": "@types/luxon",
+          "version": "3.3.2"
         },
         {
           "name": "abort-controller",
@@ -162,10 +186,6 @@
           "version": "1.4.1"
         },
         {
-          "name": "backoff",
-          "version": "2.5.0"
-        },
-        {
           "name": "base64-js",
           "version": "1.5.1"
         },
@@ -186,10 +206,6 @@
           "version": "6.0.3"
         },
         {
-          "name": "bufferutil",
-          "version": "4.0.8"
-        },
-        {
           "name": "call-bind",
           "version": "1.0.2"
         },
@@ -208,6 +224,10 @@
         {
           "name": "commander",
           "version": "10.0.1"
+        },
+        {
+          "name": "cron",
+          "version": "3.1.1"
         },
         {
           "name": "csvtojson",
@@ -264,10 +284,6 @@
         {
           "name": "es-to-primitive",
           "version": "1.2.1"
-        },
-        {
-          "name": "es6-iterator",
-          "version": "2.0.3"
         },
         {
           "name": "escalade",
@@ -474,10 +490,6 @@
           "version": "1.1.12"
         },
         {
-          "name": "is-typedarray",
-          "version": "1.0.0"
-        },
-        {
           "name": "is-utf8",
           "version": "0.2.1"
         },
@@ -502,8 +514,8 @@
           "version": "1.0.0"
         },
         {
-          "name": "jsonparse",
-          "version": "1.3.1"
+          "name": "json-buffer",
+          "version": "3.0.1"
         },
         {
           "name": "jsonwebtoken",
@@ -566,12 +578,28 @@
           "version": "4.1.1"
         },
         {
+          "name": "luxon",
+          "version": "3.3.0"
+        },
+        {
+          "name": "matchit",
+          "version": "1.1.0"
+        },
+        {
           "name": "mime-db",
           "version": "1.52.0"
         },
         {
           "name": "mime-types",
           "version": "2.1.35"
+        },
+        {
+          "name": "minizlib",
+          "version": "2.1.2"
+        },
+        {
+          "name": "mkdirp",
+          "version": "1.0.4"
         },
         {
           "name": "ms",
@@ -586,20 +614,16 @@
           "version": "3.1.1"
         },
         {
+          "name": "node-addon-api",
+          "version": "4.3.0"
+        },
+        {
           "name": "node-domexception",
           "version": "1.0.0"
         },
         {
           "name": "node-fetch",
           "version": "2.7.0"
-        },
-        {
-          "name": "node-gyp-build",
-          "version": "4.6.1"
-        },
-        {
-          "name": "nylas",
-          "version": "6.10.0"
         },
         {
           "name": "object-inspect",
@@ -634,6 +658,14 @@
           "version": "2.6.1"
         },
         {
+          "name": "pify",
+          "version": "5.0.0"
+        },
+        {
+          "name": "polka",
+          "version": "0.5.2"
+        },
+        {
           "name": "process",
           "version": "0.11.10"
         },
@@ -642,20 +674,12 @@
           "version": "1.1.0"
         },
         {
-          "name": "psl",
-          "version": "1.9.0"
-        },
-        {
           "name": "punycode",
           "version": "2.3.0"
         },
         {
           "name": "query-string",
           "version": "8.1.0"
-        },
-        {
-          "name": "querystringify",
-          "version": "2.2.0"
         },
         {
           "name": "readable-stream",
@@ -668,10 +692,6 @@
         {
           "name": "regexp.prototype.flags",
           "version": "1.5.1"
-        },
-        {
-          "name": "requires-port",
-          "version": "1.0.0"
         },
         {
           "name": "resolve",
@@ -702,8 +722,16 @@
           "version": "1.0.4"
         },
         {
+          "name": "sliced",
+          "version": "1.0.1"
+        },
+        {
           "name": "split-on-first",
           "version": "3.0.0"
+        },
+        {
+          "name": "sql-ts",
+          "version": "5.4.0"
         },
         {
           "name": "stoppable",
@@ -746,16 +774,16 @@
           "version": "16.5.0"
         },
         {
-          "name": "through",
-          "version": "2.3.8"
-        },
-        {
           "name": "tildify",
           "version": "2.0.0"
         },
         {
           "name": "tr46",
           "version": "0.0.3"
+        },
+        {
+          "name": "trouter",
+          "version": "2.0.1"
         },
         {
           "name": "tslog",
@@ -778,24 +806,8 @@
           "version": "1.0.4"
         },
         {
-          "name": "typedarray-to-buffer",
-          "version": "3.1.5"
-        },
-        {
           "name": "unbox-primitive",
           "version": "1.0.2"
-        },
-        {
-          "name": "universalify",
-          "version": "0.2.0"
-        },
-        {
-          "name": "url-parse",
-          "version": "1.5.10"
-        },
-        {
-          "name": "utf-8-validate",
-          "version": "5.0.10"
         },
         {
           "name": "uuid",
@@ -804,14 +816,6 @@
         {
           "name": "web-streams-polyfill",
           "version": "4.0.0-beta.3"
-        },
-        {
-          "name": "debug",
-          "version": "2.6.9"
-        },
-        {
-          "name": "ms",
-          "version": "2.0.0"
         },
         {
           "name": "whatwg-url",
@@ -824,10 +828,6 @@
         {
           "name": "which-typed-array",
           "version": "1.1.11"
-        },
-        {
-          "name": "yaeti",
-          "version": "0.0.6"
         }
       ]
     },
@@ -846,24 +846,16 @@
           "version": "1.0.0"
         },
         {
-          "name": "d",
-          "version": "1.0.1"
+          "name": "chownr",
+          "version": "2.0.0"
         },
         {
-          "name": "es5-ext",
-          "version": "0.10.62"
+          "name": "fs-minipass",
+          "version": "2.1.0"
         },
         {
-          "name": "es6-symbol",
-          "version": "3.1.3"
-        },
-        {
-          "name": "ext",
-          "version": "1.7.0"
-        },
-        {
-          "name": "type",
-          "version": "2.7.2"
+          "name": "minipass",
+          "version": "3.3.6"
         },
         {
           "name": "inherits",
@@ -878,16 +870,16 @@
           "version": "1.0.1"
         },
         {
-          "name": "next-tick",
-          "version": "1.1.0"
+          "name": "minipass",
+          "version": "5.0.0"
         },
         {
           "name": "semver",
           "version": "7.5.4"
         },
         {
-          "name": "type",
-          "version": "1.2.0"
+          "name": "tar",
+          "version": "6.2.0"
         },
         {
           "name": "yallist",
@@ -948,6 +940,46 @@
       ]
     },
     {
+      "string": "BSD-3-Clause",
+      "meta": {
+        "categories": {
+          "defaultCategory": "Permissive",
+          "userCategories": []
+        },
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "@js-joda/core",
+          "version": "5.6.1"
+        },
+        {
+          "name": "@vscode/sqlite3",
+          "version": "5.1.2"
+        },
+        {
+          "name": "buffer-equal-constant-time",
+          "version": "1.0.1"
+        },
+        {
+          "name": "http-status",
+          "version": "1.7.3"
+        },
+        {
+          "name": "ieee754",
+          "version": "1.2.1"
+        },
+        {
+          "name": "qs",
+          "version": "6.11.2"
+        },
+        {
+          "name": "sprintf-js",
+          "version": "1.1.3"
+        }
+      ]
+    },
+    {
       "string": "Apache-2.0",
       "meta": {
         "categories": {
@@ -975,7 +1007,7 @@
         },
         {
           "name": "googleapis",
-          "version": "126.0.1"
+          "version": "127.0.0"
         },
         {
           "name": "googleapis-common",
@@ -984,78 +1016,6 @@
         {
           "name": "jsbi",
           "version": "4.3.0"
-        },
-        {
-          "name": "websocket",
-          "version": "1.0.34"
-        }
-      ]
-    },
-    {
-      "string": "BSD-3-Clause",
-      "meta": {
-        "categories": {
-          "defaultCategory": "Permissive",
-          "userCategories": []
-        },
-        "isSpdxExpression": false
-      },
-      "dependencies": [
-        {
-          "name": "@js-joda/core",
-          "version": "5.6.1"
-        },
-        {
-          "name": "buffer-equal-constant-time",
-          "version": "1.0.1"
-        },
-        {
-          "name": "ieee754",
-          "version": "1.2.1"
-        },
-        {
-          "name": "qs",
-          "version": "6.11.2"
-        },
-        {
-          "name": "sprintf-js",
-          "version": "1.1.3"
-        },
-        {
-          "name": "tough-cookie",
-          "version": "4.1.3"
-        }
-      ]
-    },
-    {
-      "string": "(MIT OR Apache-2.0)",
-      "meta": {
-        "categories": {
-          "defaultCategory": "Permissive",
-          "userCategories": []
-        },
-        "isSpdxExpression": true
-      },
-      "dependencies": [
-        {
-          "name": "JSONStream",
-          "version": "1.3.5"
-        }
-      ]
-    },
-    {
-      "string": "N/A",
-      "meta": {
-        "categories": {
-          "defaultCategory": "N/A",
-          "userCategories": []
-        },
-        "isSpdxExpression": false
-      },
-      "dependencies": [
-        {
-          "name": "precond",
-          "version": "0.2.3"
         }
       ]
     },
@@ -1069,6 +1029,10 @@
         "isSpdxExpression": false
       },
       "dependencies": [
+        {
+          "name": "tslib",
+          "version": "2.0.3"
+        },
         {
           "name": "tslib",
           "version": "2.6.2"
@@ -1094,63 +1058,6 @@
   ],
   "licenseIssues": [
     {
-      "name": "precond",
-      "version": "0.2.3",
-      "severity": "critical",
-      "title": "Package has no specified license",
-      "shortTitle": "No license specified",
-      "recommendation": "Check the package code and files for license information",
-      "sandwormIssueCode": 100,
-      "sandwormIssueId": "SWRM-100-precond-0.2.3",
-      "findings": {
-        "sources": [
-          {
-            "name": "precond",
-            "version": "0.2.3",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "affects": [
-          {
-            "name": "nylas",
-            "version": "6.10.0",
-            "flags": {
-              "prod": true
-            }
-          },
-          {
-            "name": "backoff",
-            "version": "2.5.0",
-            "flags": {
-              "prod": true
-            }
-          },
-          {
-            "name": "precond",
-            "version": "0.2.3",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "rootDependencies": [
-          {
-            "name": "nylas",
-            "version": "6.10.0",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "paths": [
-          "nylas>backoff>precond"
-        ]
-      },
-      "type": "license"
-    },
-    {
       "name": "url-template",
       "version": "2.0.8",
       "severity": "low",
@@ -1172,7 +1079,7 @@
         "affects": [
           {
             "name": "googleapis",
-            "version": "126.0.1",
+            "version": "127.0.0",
             "flags": {
               "prod": true
             }
@@ -1195,7 +1102,7 @@
         "rootDependencies": [
           {
             "name": "googleapis",
-            "version": "126.0.1",
+            "version": "127.0.0",
             "flags": {
               "prod": true
             }
@@ -1229,7 +1136,7 @@
         "affects": [
           {
             "name": "googleapis",
-            "version": "126.0.1",
+            "version": "127.0.0",
             "flags": {
               "prod": true
             }
@@ -1252,7 +1159,7 @@
         "rootDependencies": [
           {
             "name": "googleapis",
-            "version": "126.0.1",
+            "version": "127.0.0",
             "flags": {
               "prod": true
             }
@@ -1265,179 +1172,7 @@
       "type": "license"
     }
   ],
-  "metaIssues": [
-    {
-      "severity": "high",
-      "title": "Package uses install script: \"node-gyp-build\"",
-      "shortTitle": "Uses install script",
-      "name": "bufferutil",
-      "version": "4.0.8",
-      "sandwormIssueCode": 201,
-      "sandwormIssueSpecifier": "install",
-      "sandwormIssueId": "SWRM-201-bufferutil-4.0.8-install",
-      "findings": {
-        "sources": [
-          {
-            "name": "bufferutil",
-            "version": "4.0.8",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "affects": [
-          {
-            "name": "nylas",
-            "version": "6.10.0",
-            "flags": {
-              "prod": true
-            }
-          },
-          {
-            "name": "websocket",
-            "version": "1.0.34",
-            "flags": {
-              "prod": true
-            }
-          },
-          {
-            "name": "bufferutil",
-            "version": "4.0.8",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "rootDependencies": [
-          {
-            "name": "nylas",
-            "version": "6.10.0",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "paths": [
-          "nylas>websocket>bufferutil"
-        ]
-      },
-      "type": "meta"
-    },
-    {
-      "severity": "high",
-      "title": "Package uses postinstall script: \" node -e \"try{require('./_postinstall')}catch(e){}\" || exit 0\"",
-      "shortTitle": "Uses postinstall script",
-      "name": "es5-ext",
-      "version": "0.10.62",
-      "sandwormIssueCode": 201,
-      "sandwormIssueSpecifier": "postinstall",
-      "sandwormIssueId": "SWRM-201-es5-ext-0.10.62-postinstall",
-      "findings": {
-        "sources": [
-          {
-            "name": "es5-ext",
-            "version": "0.10.62",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "affects": [
-          {
-            "name": "nylas",
-            "version": "6.10.0",
-            "flags": {
-              "prod": true
-            }
-          },
-          {
-            "name": "websocket",
-            "version": "1.0.34",
-            "flags": {
-              "prod": true
-            }
-          },
-          {
-            "name": "es5-ext",
-            "version": "0.10.62",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "rootDependencies": [
-          {
-            "name": "nylas",
-            "version": "6.10.0",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "paths": [
-          "nylas>websocket>es5-ext"
-        ]
-      },
-      "type": "meta"
-    },
-    {
-      "severity": "high",
-      "title": "Package uses install script: \"node-gyp-build\"",
-      "shortTitle": "Uses install script",
-      "name": "utf-8-validate",
-      "version": "5.0.10",
-      "sandwormIssueCode": 201,
-      "sandwormIssueSpecifier": "install",
-      "sandwormIssueId": "SWRM-201-utf-8-validate-5.0.10-install",
-      "findings": {
-        "sources": [
-          {
-            "name": "utf-8-validate",
-            "version": "5.0.10",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "affects": [
-          {
-            "name": "nylas",
-            "version": "6.10.0",
-            "flags": {
-              "prod": true
-            }
-          },
-          {
-            "name": "websocket",
-            "version": "1.0.34",
-            "flags": {
-              "prod": true
-            }
-          },
-          {
-            "name": "utf-8-validate",
-            "version": "5.0.10",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "rootDependencies": [
-          {
-            "name": "nylas",
-            "version": "6.10.0",
-            "flags": {
-              "prod": true
-            }
-          }
-        ],
-        "paths": [
-          "nylas>websocket>utf-8-validate"
-        ]
-      },
-      "type": "meta"
-    }
-  ],
+  "metaIssues": [],
   "resolvedIssues": [],
   "errors": []
 }

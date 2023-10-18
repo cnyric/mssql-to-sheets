@@ -1,0 +1,9 @@
+{
+  "execMap": {
+    "js": "tsc && node --require module-alias/register.js"
+  },
+  "ext": "ts,js,mjs,cjs,json",
+  "ignore": ["*.test.ts"],
+  "verbose": true,
+  "watch": ["src"]
+}

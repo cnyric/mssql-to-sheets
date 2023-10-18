@@ -1,4 +1,4 @@
-import type { MarkingPeriod, Progress } from './types.d.ts';
+import type { MarkingPeriod, Progress } from './types.js';
 
 import { config } from 'dotenv';
 
