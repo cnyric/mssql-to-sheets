@@ -16,8 +16,7 @@ function routes(service: Polka) {
   service.post('/jobs', async (req, res) => {
     if (!req.body) {
       res.statusCode = 400;
-      res.end(JSON.stringify({ status: status[400] }));
-      return;
+      return res.end(JSON.stringify({ status: status[400] }));
     }
 
     try {

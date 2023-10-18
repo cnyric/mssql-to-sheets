@@ -49,9 +49,13 @@ function checkForRequired<T, K extends keyof T>(obj: Partial<T>, prop: K, msg?: 
  * @param exit - Whether or not to exit the Node.js process. Defaults to `true`.
  */
 async function errorHandler(error: Error, source: string) {
-  await writeFile(<string>process.env['ERROR_LOG_PATH'], `${dayjs().format()}: ${source} - ${error.message}\n`, {
-    flag: 'a'
-  });
+  await writeFile(
+    <string>process.env['ERROR_LOG_PATH'] ?? `${process.cwd()}/error.log`,
+    `${dayjs().format()}: ${source} - ${error.message}\n`,
+    {
+      flag: 'a'
+    }
+  );
 
   log.error(source, error.message, error.stack);
 }
