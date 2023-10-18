@@ -1,3 +1,21 @@
+interface Job {
+  id?: string;
+  name: string;
+  active?: boolean;
+  spreadsheetId: string;
+  database: string;
+  schedule: string;
+  lastRun?: string;
+  email?: string;
+  tasks: Task[];
+}
+
+interface Task {
+  id?: string;
+  name: string;
+  query: string;
+}
+
 interface MPBase {
   District?: string;
   Site?: string;
@@ -21,7 +39,7 @@ interface Progress extends MPBase {
   ProgressReport?: string;
 }
 
-interface EnvVarsv {
+interface EnvVars {
   DB_HOST: string;
   DB_USER: string;
   DB_PASS: string;
@@ -36,4 +54,4 @@ declare global {
   }
 }
 
-export type { MarkingPeriod, Progress };
+export type { MarkingPeriod, Progress, Job, Task };

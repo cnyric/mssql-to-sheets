@@ -30,13 +30,18 @@ function setTitle(text: string) {
  * the error message to the console. Finally, it exits the Node.js process.
  * @param error - An `Error` object.
  * @param source - The source of the error.
+ * @param exit - Whether or not to exit the Node.js process. Defaults to `true`.
  */
-async function errorHandler(error: Error, source: string) {
+async function errorHandler(error: Error, source: string, exit: boolean = true) {
   await writeFile(<string>process.env['ERROR_LOG_PATH'], `${dayjs().format()}: ${source} - ${error.message}\n`, {
     flag: 'a'
   });
+
   log.error(source, error.message);
-  process.exit(1);
+
+  if (exit) {
+    process.exit(1);
+  }
 }
 
 export { log, today, errorHandler, setTitle };
