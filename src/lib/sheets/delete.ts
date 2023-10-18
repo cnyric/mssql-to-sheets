@@ -1,29 +1,24 @@
 import type { SheetInfo } from './types.d.ts';
 
-import { update } from './client.js';
-import { errorHandler } from '../common/util.js';
+import sheets from './client.js';
 
 async function deleteSheet(spreadsheet: SheetInfo, sheetId: number): Promise<void> {
-  try {
-    const spreadsheetId = <string>spreadsheet.data.spreadsheetId;
+  const spreadsheetId = <string>spreadsheet.data.spreadsheetId;
 
-    const query = {
-      spreadsheetId,
-      requestBody: {
-        requests: [
-          {
-            deleteSheet: {
-              sheetId
-            }
+  const query = {
+    spreadsheetId,
+    requestBody: {
+      requests: [
+        {
+          deleteSheet: {
+            sheetId
           }
-        ]
-      }
-    };
+        }
+      ]
+    }
+  };
 
-    await update(query);
-  } catch (err) {
-    await errorHandler(<Error>err, 'deleteSheet');
-  }
+  await sheets.spreadsheets.batchUpdate(query);
 }
 
 export default deleteSheet;

@@ -53,7 +53,7 @@ async function errorHandler(error: Error, source: string) {
     flag: 'a'
   });
 
-  log.error(source, error.message);
+  log.error(source, error.message, error.stack);
 }
 
 export { log, today, checkForRequired, errorHandler, setTitle };

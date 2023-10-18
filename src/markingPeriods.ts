@@ -1,5 +1,3 @@
-import type { MarkingPeriod, Progress } from './types.js';
-
 import { config } from 'dotenv';
 
 import db from './lib/common/db.js';
@@ -10,8 +8,8 @@ config();
 
 async function main() {
   const spreadsheetId = '1KD-cCOJEdNCWFU1RTG15xE_6BB_NTaoJ5ioBj6iR9W4';
-  const markingPeriods = <MarkingPeriod[]>await db('ksync').select('*').from('MarkingPeriods');
-  const progress = <Progress[]>await db('ksync').select('*').from('Progress');
+  const markingPeriods = await db('ksync').select('*').from('MarkingPeriods');
+  const progress = await db('ksync').select('*').from('Progress');
 
   await insertSheet(spreadsheetId, 'Marking_Periods', markingPeriods, true);
   await insertSheet(spreadsheetId, 'Progress', progress, true);

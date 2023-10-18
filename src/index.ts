@@ -1,4 +1,4 @@
-import service from './lib/web-service/index.js';
+import service from './lib/api/index.js';
 import { log, errorHandler } from './lib/common/util.js';
 import loadEnv from './lib/common/env.js';
 

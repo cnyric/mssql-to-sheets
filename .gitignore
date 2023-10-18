@@ -250,3 +250,4 @@ UpgradeLog*.XML
 x64/
 x86/
 ErrorLog.csv
+*.sqlite

@@ -36,14 +36,6 @@ interface MPBase {
   ID?: number;
 }
 
-interface MarkingPeriod extends MPBase {
-  MarkingPeriod?: string;
-}
-
-interface Progress extends MPBase {
-  ProgressReport?: string;
-}
-
 interface EnvVars {
   DB_HOST: string;
   DB_USER: string;
@@ -59,4 +51,4 @@ declare global {
   }
 }
 
-export type { MarkingPeriod, Progress, Job, Task };
+export type { Job, Task };

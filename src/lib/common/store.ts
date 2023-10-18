@@ -1,4 +1,4 @@
-import type { Job } from '../../types.d.ts';
+import type { Job } from '../api/types.js';
 
 import Keyv from '@keyvhq/core';
 import KeyvSQLite from '@keyvhq/sqlite';

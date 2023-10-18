@@ -10,7 +10,7 @@ Content-Type: application/json
   "spreadsheetId": "11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI",
   "database": "KSYNC",
   "schedule": "0 1 1 * *",
-  "tasks": [{"name": "test-task", "query": "SELECT * FROM \"District\""}]
+  "tasks": [{"name": "test-task", "query": "SELECT * FROM \"District\";"}]
 }
 HTTP 400
 
@@ -21,7 +21,7 @@ Content-Type: application/json
   "name": "test-job",
   "database": "KSYNC",
   "schedule": "0 1 1 * *",
-  "tasks": [{"name": "test-task", "query": "SELECT * FROM \"District\""}]
+  "tasks": [{"name": "test-task", "query": "SELECT * FROM \"District\";"}]
 }
 HTTP 400
 
@@ -32,7 +32,7 @@ Content-Type: application/json
   "name": "test-job",
   "spreadsheetId": "11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI",
   "schedule": "0 1 1 * *",
-  "tasks": [{"name": "test-task", "query": "SELECT * FROM \"District\""}]
+  "tasks": [{"name": "test-task", "query": "SELECT * FROM \"District\";"}]
 }
 HTTP 400
 
@@ -43,7 +43,7 @@ Content-Type: application/json
   "name": "test-job",
   "spreadsheetId": "11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI",
   "database": "KSYNC",
-  "tasks": [{"name": "test-task", "query": "SELECT * FROM \"District\""}]
+  "tasks": [{"name": "test-task", "query": "SELECT * FROM \"District\";"}]
 }
 HTTP 400
 
@@ -78,7 +78,7 @@ Content-Type: application/json
   "spreadsheetId": "11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI",
   "database": "KSYNC",
   "schedule": "0 1 1 * *",
-  "tasks": [{"name": "test-task", "query": "SELET * FROM `District`"}]
+  "tasks": [{"name": "test-task", "query": "SELET * FROM \"District\";"}]
 }
 HTTP 400
 
@@ -90,7 +90,7 @@ Content-Type: application/json
   "spreadsheetId": "11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI",
   "database": "KSYNC",
   "schedule": "0 1 1 * *",
-  "tasks": [{"name": "test-task", "query": "SELECT * FROM \"District\""}]
+  "tasks": [{"name": "test-task", "query": "SELECT * FROM \"District\";"}]
 }
 HTTP 201
 [Captures]

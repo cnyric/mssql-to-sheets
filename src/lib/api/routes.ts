@@ -1,5 +1,5 @@
 import type { Polka } from 'polka';
-import type { Job } from '../../types.d.ts';
+import type { Job } from './types.js';
 
 import status from 'http-status';
 
@@ -22,6 +22,7 @@ function routes(service: Polka) {
 
     try {
       const job = await addJob(req.body);
+      res.statusCode = 201;
       res.end(JSON.stringify(job));
     } catch (err) {
       errorHandler(<Error>err, req, res);

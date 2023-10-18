@@ -15,9 +15,5 @@ const auth = new JWT({
 });
 
 const sheets = google.sheets({ version: 'v4', auth });
-const get = sheets.spreadsheets.get;
-const update = sheets.spreadsheets.batchUpdate;
-const append = sheets.spreadsheets.values.append;
 
 export default sheets;
-export { get, update, append };
