@@ -18,11 +18,15 @@ Roadmap:
 
 ## Usage
 
-1. Create a new [Google Sheets](https://sheets.google.com) spreadsheet or edit the spreadsheet you wish to update.
+1. Create a new [Google Sheets](https://sheets.google.com) spreadsheet or edit the spreadsheet you wish to update.\*
 2. Click the `Share` button and add `sheets@edsapps.iam.gserviceaccount.com` (or your own service account) as an Editor.
 3. Grab the `spreadsheetId` value from the URL. It's the long string of characters between `/d/` and `/edit`.
 4. Visit [Crontab.guru](https://crontab.guru) to generate a cron schedule.
 5. Create a new [Hurl](https://hurl.dev/) file containing your API request (see the [`jobs`](https://github.com/cnyric/mssql-to-sheets/tree/main/jobs) folder for examples) or use your preferred REST client.
+
+<small>\*The spreadsheet must be manually created because the generic service account user is not a member of the
+organization's Google Workspace and therefore does not have permissions to create a document within the workspace. A
+workaround is being pursued.</small>
 
 ## API
 
