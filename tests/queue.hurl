@@ -1,4 +1,4 @@
 GET http://localhost:3000/queue
 Content-Type: application/json
-Authorization: Bearer X1FMbjl3QXhQX1U4OWFCQk9xejBWU0JENkwzY3psLTdGTUZvMVFpcHdVM084SkRwdUJIVlRyaDhvZU9YRHdYcQ
+Authorization: Bearer {{token}}
 HTTP 200

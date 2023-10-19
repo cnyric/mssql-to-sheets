@@ -2,7 +2,6 @@
 POST http://localhost:3000/jobs
 Content-Type: application/json
 [Options]
-variable: token="X1FMbjl3QXhQX1U4OWFCQk9xejBWU0JENkwzY3psLTdGTUZvMVFpcHdVM084SkRwdUJIVlRyaDhvZU9YRHdYcQ=="
 variable: sheetId="11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI"
 variable: database="KSYNC"
 variable: schedule="0 1 1 * *"
