@@ -1,4 +1,5 @@
 CREATE DATABASE testDb;
+GO;
 
 USE testDb;
 

@@ -64,7 +64,12 @@ jobs:
           DB_HOST: localhost
           DB_PASS: SQLp4ssw0rd1234
           DB_USER: sa
+          PORT: 8080
           TRANSACTION_KEY: _QLn9wAxP_U89aBBOqz0VSBD6L3czl-7FMFo1QipwU3O8JDpuBHVTrh8oeOXDwXq
+
+      - name: Wait for app to start
+        run: |
+          while ! nc -z localhost 8080; do sleep 1; done
 
       - name: Run tests
         run: |
