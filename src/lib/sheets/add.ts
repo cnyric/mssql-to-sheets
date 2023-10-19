@@ -15,10 +15,13 @@ async function addSheet(
     spreadsheetId
   });
   // log.debug('addSheet', title, { sheet });
+
   if (append === false) {
-    const old = sheet.data.sheets?.filter(s => s.properties?.title !== title) ?? [];
-    for (const s of old) {
-      await deleteSheet(sheet, <number>s.properties?.sheetId);
+    if (sheet.data.sheets && sheet.data.sheets?.length > 1) {
+      const old = sheet.data.sheets?.filter(s => s.properties?.title !== title) ?? [];
+      for (const s of old) {
+        await deleteSheet(sheet, <number>s.properties?.sheetId);
+      }
     }
   }
 
@@ -40,14 +43,31 @@ async function addSheet(
     const pages = await sheets.spreadsheets.batchUpdate(query);
     return [sheet, <SheetProperties[]>pages.data.replies?.map(reply => reply.addSheet?.properties)];
   } else {
-    const query = {
+    const clearQuery = {
       spreadsheetId,
       requestBody: {
         ranges: [`${title}!A1:ZZ1000000`]
       }
     };
-    await sheets.spreadsheets.values.batchClear(query);
-    return [sheet, <SheetProperties[]>sheet.data.sheets?.map(sheet => sheet.properties)];
+
+    const updateQuery = {
+      spreadsheetId,
+      resource: {
+        requests: {
+          updateSheetProperties: {
+            properties: {
+              sheetId: sheet.data.sheets?.find(sheet => sheet.properties?.title === title)?.properties?.sheetId,
+              title
+            },
+            fields: 'title'
+          }
+        }
+      }
+    };
+
+    await sheets.spreadsheets.values.batchClear(clearQuery);
+    const pages = await sheets.spreadsheets.batchUpdate(updateQuery);
+    return [sheet, <SheetProperties[]>pages.data.replies?.map(reply => reply.addSheet?.properties)];
   }
 }
 

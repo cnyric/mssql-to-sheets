@@ -111,8 +111,6 @@ async function doJob(job: Job) {
       // log.debug('doJob', job.id, data);
       await insertSheet(job.spreadsheetId, job.name, data, job.append);
     }
-    job.lastRun = dayjs().format();
-    await editJob(<string>job.id, job);
     log.info('doJob', job.id, `\`https://docs.google.com/spreadsheets/d/${job.spreadsheetId}/\` updated successfully`);
     return job;
   } else {

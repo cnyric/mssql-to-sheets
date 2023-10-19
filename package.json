@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "nodemon",
     "postinstall": "sandworm-audit",
-    "test": "hurl --test tests/*.hurl",
+    "test": "hurl --variables-file tests/.env.hurl --test tests/*.hurl",
     "build": "rm -rf dist; tsc",
     "start": "node dist/index.js"
   },

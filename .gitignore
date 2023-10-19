@@ -28,6 +28,7 @@ _UpgradeReport_Files/
 .DocumentRevisions-V100
 .DS_Store
 .env
+.env.hurl
 .fake/
 .fseventsd
 .fuse_hidden*

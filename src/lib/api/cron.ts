@@ -2,45 +2,37 @@ import type { Job, Queue } from './types.d.ts';
 import type { Handler } from 'mitt';
 
 import { CronJob } from 'cron';
-import dayjs from 'dayjs';
 
-import { editJob, doJob, getJob } from './jobs.js';
+import { doJob, getJob } from './jobs.js';
 import { log, events } from '../common/util.js';
 
 let queue: Queue = {};
 
-async function setNextRun(job: Job, item: CronJob) {
-  job.nextRun = dayjs(item.nextDate().toString()).format();
-  await editJob(<string>job.id, job);
-}
-
 async function addToQueue(job: Job) {
   const jobId = <string>job.id;
-  const item = new CronJob(job.schedule, async () => await doJob(job), null, true);
-  await setNextRun(job, item);
-  queue[jobId] = item;
   log.debug('addToQueue', jobId);
+  const item = new CronJob(job.schedule, async () => await doJob(job), null, true);
+  queue[jobId] = item;
   return item;
 }
 
 async function replaceInQueue(job: Job) {
   const jobId = <string>job.id;
-  queue[jobId].stop();
+  log.debug('replaceInQueue', jobId);
+  queue[jobId]?.stop();
   delete queue[jobId];
   const item = await addToQueue(job);
-  await setNextRun(job, item);
-  log.debug('updateQueue', jobId);
   return item;
 }
 
 function activateJob(jobId: string) {
   log.debug('activateJob', jobId);
-  queue[jobId].start();
+  queue[jobId]?.start();
 }
 
 function deactivateJob(jobId: string) {
   log.debug('deactivateJob', jobId);
-  queue[jobId].stop();
+  queue[jobId]?.stop();
 }
 
 function deleteFromQueue(jobId: string) {

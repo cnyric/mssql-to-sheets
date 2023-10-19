@@ -26,7 +26,7 @@ POST http://{{host}}/jobs
 Content-Type: application/json
 Authorization: Bearer {{token}}
 {
-  "name": "test-job",
+  "name": "{{name}}",
   "database": "{{database}}",
   "schedule": "{{schedule}}",
   "tasks": [{"name": "test-task", "query": "{{query}}"}]
@@ -38,7 +38,7 @@ POST http://{{host}}/jobs
 Content-Type: application/json
 Authorization: Bearer {{token}}
 {
-  "name": "test-job",
+  "name": "{{name}}",
   "spreadsheetId": "{{sheetId}}",
   "schedule": "{{schedule}}",
   "tasks": [{"name": "test-task", "query": "{{query}}"}]
@@ -50,7 +50,7 @@ POST http://{{host}}/jobs
 Content-Type: application/json
 Authorization: Bearer {{token}}
 {
-  "name": "test-job",
+  "name": "{{name}}",
   "spreadsheetId": "{{sheetId}}",
   "database": "{{database}}",
   "tasks": [{"name": "test-task", "query": "{{query}}"}]
@@ -62,7 +62,7 @@ POST http://{{host}}/jobs
 Content-Type: application/json
 Authorization: Bearer {{token}}
 {
-  "name": "test-job",
+  "name": "{{name}}",
   "spreadsheetId": "{{sheetId}}",
   "database": "{{database}}",
   "schedule": "{{schedule}}"
@@ -74,7 +74,7 @@ POST http://{{host}}/jobs
 Content-Type: application/json
 Authorization: Bearer {{token}}
 {
-  "name": "test-job",
+  "name": "{{name}}",
   "spreadsheetId": "{{sheetId}}",
   "database": "{{database}}",
   "schedule": "{{schedule}}",
@@ -87,7 +87,7 @@ POST http://{{host}}/jobs
 Content-Type: application/json
 Authorization: Bearer {{token}}
 {
-  "name": "test-job",
+  "name": "{{name}}",
   "spreadsheetId": "{{sheetId}}",
   "database": "{{database}}",
   "schedule": "{{schedule}}",
@@ -100,7 +100,7 @@ POST http://{{host}}/jobs
 Content-Type: application/json
 Authorization: Bearer {{token}}
 {
-  "name": "test-job",
+  "name": "{{name}}",
   "spreadsheetId": "{{sheetId}}",
   "database": "{{database}}",
   "schedule": "{{schedule}}",
@@ -115,7 +115,7 @@ GET http://{{host}}/jobs/{{id}}
 Authorization: Bearer {{token}}
 HTTP 200
 [Asserts]
-jsonpath "$.name" == "test-job"
+jsonpath "$.name" == "{{name}}"
 
 # Toggle job inactive
 PUT http://{{host}}/jobs/{{id}}/toggle
