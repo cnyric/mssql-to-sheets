@@ -20,6 +20,22 @@ try {
       log.info(`Transaction key: ${token}`);
     }
   });
+
+  process.on('SIGTERM', e => {
+    errorHandler(new Error(e), 'SIGTERM').then(() => {
+      process.exit(0);
+    });
+  });
+
+  process.on('SIGINT', e => {
+    errorHandler(new Error(e), 'SIGINT').then(() => {
+      process.exit(1);
+    });
+  });
+
+  process.on('uncaughtException', async err => {
+    await errorHandler(err, 'uncaughtException');
+  });
 } catch (err) {
   errorHandler(<Error>err, 'main');
 }

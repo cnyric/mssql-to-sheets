@@ -11,7 +11,7 @@ jobs:
       id-token: 'write'
     steps:
       - name: Install Node.js v18
-        uses: 'actions/setup-node@v2'
+        uses: 'actions/setup-node@v3'
         with:
           node-version: 18
 
@@ -24,7 +24,7 @@ jobs:
           install: sqlengine, sqlclient, sqlpackage
 
       - name: Checkout repo
-        uses: 'actions/checkout@v2'
+        uses: 'actions/checkout@v3'
 
       - name: Cache Node modules
         id: cache-npm
@@ -63,16 +63,23 @@ jobs:
           DB_HOST: localhost
           DB_PASS: SQLp4ssw0rd1234
           DB_USER: sa
-          PORT: 3000
+          PORT: 8080
           TRANSACTION_KEY: _QLn9wAxP_U89aBBOqz0VSBD6L3czl-7FMFo1QipwU3O8JDpuBHVTrh8oeOXDwXq
 
       - name: Wait for app to start
         run: |
-          while ! nc -z localhost 3000; do sleep 1; done
+          while ! nc -z localhost 8080; do sleep 1; done
 
       - name: Run tests
+        env:
+          HURL_host: localhost:8080
+          HURL_database: tempdb
+          HURL_token: X1FMbjl3QXhQX1U4OWFCQk9xejBWU0JENkwzY3psLTdGTUZvMVFpcHdVM084SkRwdUJIVlRyaDhvZU9YRHdYcQ==
+          HURL_sheetId: 11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI
+          HURL_schedule: '0 1 1 * *'
+          HURL_query: 'SELECT * FROM "testTable";'
         run: |
-          hurl --variable database=tempdb --variable token=X1FMbjl3QXhQX1U4OWFCQk9xejBWU0JENkwzY3psLTdGTUZvMVFpcHdVM084SkRwdUJIVlRyaDhvZU9YRHdYcQ== --test tests/*.hurl
+          hurl --test tests/*.hurl
 
       - name: Preserve run artifacts
         uses: 'actions/upload-artifact@v3'
