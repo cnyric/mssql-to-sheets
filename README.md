@@ -59,6 +59,7 @@ department at [CNYRIC](https://www.cnyric.org/).
 - `POST`: Creates a new job.
 
   - Parameters:
+
     - `name`: Job name
     - `schedule`: Cron schedule
     - `spreadsheetId`: Google Sheet ID
@@ -67,6 +68,24 @@ department at [CNYRIC](https://www.cnyric.org/).
     - `tasks`: Array of tasks
       - `query`: Raw SQL query or SQL file URL (http/s only)
       - `name`: Worksheet name (will be appended with date)
+
+  - Example request:
+
+    ```yml
+    POST http://localhost:3000/jobs
+    Content-Type: application/json
+    Authorization: Bearer {{token}}
+    {
+      "name": "MarkingPeriods",
+      "spreadsheetId": "11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI",
+      "database": "KSYNC",
+      "schedule": "0 1 1 * *",
+      "tasks": [
+        {"name": "Marking_Periods", "query": "SELECT * FROM \"MarkingPeriods\";"},
+        {"name": "Progress", "query": "SELECT * FROM \"Progress\";"}
+      ]
+    }
+    ```
 
 #### `/jobs/:id`
 
