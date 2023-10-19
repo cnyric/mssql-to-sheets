@@ -1,8 +1,14 @@
 name: Tests
 run-name: Test `exports-to-sheet` API
 on:
-  - push
-  - pull_request
+  push:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
 jobs:
   test:
     runs-on: ubuntu-latest
