@@ -149,7 +149,7 @@ DB_USER="[database user]"
 
 # One of either is required
 GOOGLE_APPLICATION_CREDENTIALS="[gcloud default credentials]"
-CREDENTIAL_FILE_PATH="[gcloud jwt credentials]"
+SERVICE_ACCOUNT_KEY="[gcloud service account key]"
 
 # Not required but recommended
 TRANSACTION_KEY="[unencoded transaction key]" # autogenerates if unspecified
@@ -194,7 +194,9 @@ query="[SQL query]"
 name="[job name]"
 ```
 
-Run the tests:
+#### Run tests
+
+Launches the Hurl test runner.
 
 ```sh
 npm test
