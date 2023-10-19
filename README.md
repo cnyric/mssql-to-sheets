@@ -77,9 +77,9 @@ department at [CNYRIC](https://www.cnyric.org/).
     Authorization: Bearer {{token}}
     {
       "name": "MarkingPeriods",
+      "schedule": "0 1 1 * *",
       "spreadsheetId": "11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI",
       "database": "KSYNC",
-      "schedule": "0 1 1 * *",
       "tasks": [
         {"name": "Marking_Periods", "query": "SELECT * FROM \"MarkingPeriods\";"},
         {"name": "Progress", "query": "SELECT * FROM \"Progress\";"}
@@ -108,7 +108,7 @@ department at [CNYRIC](https://www.cnyric.org/).
 
 - `GET`: Returns list of queued jobs.
 
-#### `/queue:id`
+#### `/queue/:id`
 
 - `GET`: Returns queued job details.
 
