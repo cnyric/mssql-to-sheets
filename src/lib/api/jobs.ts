@@ -39,7 +39,7 @@ async function addJob(job: Job): Promise<Job | Error> {
     }
 
     const tmpFile = `/${tmpdir()}/${task.id}.sql`;
-    log.debug('addJob', tmpFile);
+    // log.debug('addJob', tmpFile);
     await writeFile(tmpFile, task.query);
     await execa(`tsqllint`, [tmpFile]);
     await unlink(tmpFile);
@@ -48,14 +48,14 @@ async function addJob(job: Job): Promise<Job | Error> {
   }
   job.tasks = tasks;
 
-  log.debug('addJob', job);
+  // log.debug('addJob', job);
   await store.set(job.id, job);
   return job;
 }
 
 // delete job
 async function delJob(jobId: string) {
-  log.debug('delJob', jobId);
+  // log.debug('delJob', jobId);
   await store.delete(jobId);
   return {
     id: jobId,
@@ -66,7 +66,7 @@ async function delJob(jobId: string) {
 // edit job
 async function editJob(jobId: string, job: Job) {
   job.updatedAt = dayjs().format();
-  log.debug('editJob', jobId, job);
+  // log.debug('editJob', jobId, job);
   await store.set(jobId, job);
   return job;
 }
@@ -76,7 +76,7 @@ async function toggleJob(jobId: string) {
   const job = <Job>await store.get(jobId);
   job.active = !job.active;
   job.updatedAt = dayjs().format();
-  log.debug('toggleJob', jobId, job.active);
+  // log.debug('toggleJob', jobId, job.active);
   await store.set(jobId, job);
   return job;
 }
@@ -84,32 +84,32 @@ async function toggleJob(jobId: string) {
 // get job(s)
 async function getJob(jobId?: string): Promise<Job | Job[] | void> {
   if (jobId) {
-    log.debug('getJob', jobId);
+    // log.debug('getJob', jobId);
     return await store.get(jobId);
   } else {
     let jobs: any[] = [];
     const values = store.iterator();
-    log.debug('getJob', values);
+    // log.debug('getJob', values);
     for await (const [key, value] of values as AsyncIterableIterator<[string, DeserializedData<string>]>) {
       jobs.push(value);
     }
-    log.debug('getJob', jobs);
+    // log.debug('getJob', jobs);
     return jobs;
   }
 }
 
 // do job
 async function doJob(job: Job) {
-  log.debug('doJob', job.id);
+  // log.debug('doJob', job.id);
   if (job.active) {
     for (const task of job.tasks) {
       const data = await db(job.database).raw(task.query);
-      log.debug('doJob', job.id, data);
+      // log.debug('doJob', job.id, data);
       await insertSheet(job.spreadsheetId, job.name, data, job.append);
     }
     job.lastRun = dayjs().format();
     await editJob(<string>job.id, job);
-    log.debug('doJob', job.id, `\`https://docs.google.com/spreadsheets/d/${job.spreadsheetId}/\` updated successfully`);
+    log.info('doJob', job.id, `\`https://docs.google.com/spreadsheets/d/${job.spreadsheetId}/\` updated successfully`);
     return job;
   } else {
     return false;

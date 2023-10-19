@@ -9,16 +9,12 @@ async function addSheet(
   sheetName: string,
   append: boolean = false
 ): Promise<[SheetInfo, SheetProperties[]] | void> {
-  log.debug('addSheet', { spreadsheetId, sheetName });
-
+  // log.debug('addSheet', { spreadsheetId, sheetName });
   const title = setTitle(sheetName);
-
   const sheet = await sheets.spreadsheets.get({
     spreadsheetId
   });
-
-  log.debug('addSheet', title, { sheet });
-
+  // log.debug('addSheet', title, { sheet });
   if (append === false) {
     const old = sheet.data.sheets?.filter(s => s.properties?.title !== title) ?? [];
     for (const s of old) {
@@ -41,9 +37,7 @@ async function addSheet(
         ]
       }
     };
-
     const pages = await sheets.spreadsheets.batchUpdate(query);
-
     return [sheet, <SheetProperties[]>pages.data.replies?.map(reply => reply.addSheet?.properties)];
   } else {
     const query = {
@@ -52,7 +46,6 @@ async function addSheet(
         ranges: [`${title}!A1:ZZ1000000`]
       }
     };
-
     await sheets.spreadsheets.values.batchClear(query);
     return [sheet, <SheetProperties[]>sheet.data.sheets?.map(sheet => sheet.properties)];
   }
