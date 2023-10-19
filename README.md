@@ -6,9 +6,9 @@ Node.js service to automate exports of data from a SQL Server instance to Google
 
 Features:
 
-- Job data is persisted between runs with SQLite.
-- Queries are linted with [tsqllint](https://github.com/tsqllint/tsqllint).
-- Uses [Hurl](https://hurl.dev/) for testing.
+- Job data persisted between runs with SQLite
+- Queries linted with [tsqllint](https://github.com/tsqllint/tsqllint)
+- Uses [Hurl](https://hurl.dev/) for testing
 
 Roadmap:
 
@@ -19,7 +19,7 @@ Roadmap:
 ## Usage
 
 1. Create a new [Google Sheets](https://sheets.google.com) spreadsheet or edit the spreadsheet you wish to update.
-2. Click the `Share` button and add `sheets@edsapps.iam.gserviceaccount.com` as an Editor.
+2. Click the `Share` button and add `sheets@edsapps.iam.gserviceaccount.com` (or your own service account) as an Editor.
 3. Grab the `spreadsheetId` value from the URL. It's the long string of characters between `/d/` and `/edit`.
 4. Visit [Crontab.guru](https://crontab.guru) to generate a cron schedule.
 5. Create a new [Hurl](https://hurl.dev/) file containing your API request (see the [`jobs`](https://github.com/cnyric/export-to-sheets/tree/main/jobs) folder for examples) or use your preferred REST client.
@@ -41,7 +41,7 @@ department at [CNYRIC](https://www.cnyric.org/).
 ### Base URLs
 
 - Development: `http://localhost:3000`
-- Production: `https://sheetsvc.edsapps.cnyric.org`
+- Production: `https://sheetsvc.edsapps.cnyric.org` (RIC internal LAN only)
 
 ### Endpoints
 
