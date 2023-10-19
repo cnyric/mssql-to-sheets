@@ -1,23 +1,6 @@
 import type { CronJob } from 'cron';
 import type { EventType } from 'mitt';
 
-interface EnvVars {
-  [key: string]: any;
-
-  DB_HOST: string;
-  DB_USER: string;
-  DB_PASS: string;
-  PORT?: number;
-  ERROR_LOG_PATH?: string;
-  STORE_PATH?: string;
-}
-
-declare global {
-  namespace NodeJS {
-    interface ProcessEnv extends EnvVars {}
-  }
-}
-
 interface Task {
   id?: string;
   name: string;
