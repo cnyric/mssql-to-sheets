@@ -15,17 +15,11 @@ jobs:
       - name: Install Hurl
         uses: gacts/install-hurl@v1
 
-      - name: Generate DB password
-        id: password
-        uses: aammirmirza/RandomPasswordGenerator@v1.1
-        with:
-          length: 18
-
       - name: Install SQL Server
         uses: potatoqualitee/mssqlsuite@v1.7
         with:
           install: sqlengine, sqlclient, sqlpackage
-          sa-password: ${{ steps.password.outputs.password }}
+          sa-password: SQLp4ssw0rd1234
 
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -49,7 +43,7 @@ jobs:
 
       - name: Import test data
         run: |
-          sqlcmd -S localhost -U sa -P "${{ steps.password.outputs.password }}"" -i ./tests/test.sql
+          sqlcmd -S localhost -U sa -P SQLp4ssw0rd1234 -i ./tests/test.sql
 
       - name: Build app
         run: npm run build
@@ -58,7 +52,7 @@ jobs:
         run: npm run start &
         env:
           DB_HOST: localhost
-          DB_PASS: ${{ steps.password.outputs.password }}
+          DB_PASS: SQLp4ssw0rd1234
           DB_USER: sa
           TRANSACTION_KEY: _QLn9wAxP_U89aBBOqz0VSBD6L3czl-7FMFo1QipwU3O8JDpuBHVTrh8oeOXDwXq
 
