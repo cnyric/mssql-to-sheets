@@ -107,12 +107,12 @@ npm i
 
 #### Google authentication
 
-This service requires access to the following Google APIs which must be enabled in the Google Cloud Console:
+This service requires access to the following Google APIs which must be [enabled in the Google Cloud Console](https://cloud.google.com/endpoints/docs/openapi/enable-api):
 
 - Google Sheets API
 - IAM Service Account Credentials API
 
-It also requires the creation of a service account with the following roles:
+It also requires the [creation of a service account](https://cloud.google.com/iam/docs/service-accounts-create) with the following roles:
 
 - Service Account Token Creator
 - Service Account User
@@ -121,8 +121,9 @@ It also requires the creation of a service account with the following roles:
 
 Tokens can be provided to the application by the [`gcloud` CLI](https://cloud.google.com/sdk/docs/install) or by a [service account key](https://cloud.google.com/iam/docs/keys-create-delete) file.
 
-Future releases will require the creation of a Google Workspaces Custom Admin Role with full access to Google Docs,
-Sheets, and Drive, and its assignment to the service account.
+Future releases will require the creation of a Google Workspaces [Custom Admin
+Role](https://support.google.com/a/answer/2406043?hl=en) with full access to Google Docs, Sheets, and Drive, and its
+[assignment to the service account](https://developers.google.com/workspace/guides/create-credentials#service-account).
 
 #### Environment variables
 
