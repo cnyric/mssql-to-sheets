@@ -11,7 +11,8 @@
     "dev": "nodemon",
     "postinstall": "sandworm-audit",
     "test": "hurl --test tests/*.hurl",
-    "build": "rm -rf dist; tsc"
+    "build": "rm -rf dist; tsc",
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@keyvhq/core": "^2.1.0",

@@ -48,6 +48,13 @@ jobs:
       - name: Build app
         run: npm run build
 
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/344339347742/locations/global/workloadIdentityPools/github/providers/github'
+          service_account: 'sheets@edsapps.iam.gserviceaccount.com'
+          create_credentials_file: true
+
       - name: Start app
         run: npm run start &
         env:
