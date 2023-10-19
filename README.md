@@ -1,4 +1,4 @@
-# Export SQL to Google Sheets
+# Export Microsoft SQL data to Google Sheets as-a-service
 
 [![Tests](https://github.com/cnyric/export-to-sheets/actions/workflows/test.yaml/badge.svg)](https://github.com/cnyric/export-to-sheets/actions/workflows/test.yaml)
 
@@ -52,7 +52,7 @@ department at [CNYRIC](https://www.cnyric.org/).
     - `schedule`: Cron schedule
     - `spreadsheetId`: Google Sheet ID
     - `tasks`: Array of tasks
-      - `query`: SQL query
+      - `query`: Raw SQL query or URL to a SQL file
       - `name`: Worksheet name
 
 #### `/jobs/:id`
@@ -65,7 +65,7 @@ department at [CNYRIC](https://www.cnyric.org/).
     - `schedule`: Cron schedule
     - `spreadsheetId`: Google Sheet ID
     - `tasks`: Array of tasks
-      - `query`: SQL query
+      - `query`: Raw SQL query or URL to a SQL file
       - `name`: Worksheet name
 
 - `DELETE`: Deletes job.
