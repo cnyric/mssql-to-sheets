@@ -105,6 +105,27 @@ npm i
 
 ### Configure
 
+#### Google authentication
+
+This service requires access to the following Google APIs which must be enabled in the Google Cloud Console:
+
+- Google Sheets API
+- IAM Service Account Credentials API
+
+It also requires the creation of a service account with the following roles:
+
+- Service Account Token Creator
+- Service Account User
+- Viewer
+- Workload Identity User (for GitHub Actions CI/CD)
+
+Tokens can be provided to the application by the [`gcloud` CLI](https://cloud.google.com/sdk/docs/install) or by a [service account key](https://cloud.google.com/iam/docs/keys-create-delete) file.
+
+Future releases will require the creation of a Google Workspaces Custom Admin Role with full access to Google Docs,
+Sheets, and Drive, and its assignment to the service account.
+
+#### Environment variables
+
 Generate a transaction key by running the following command in the terminal:
 
 ```sh
@@ -138,20 +159,6 @@ PORT="[port number]" # defaults to 3000
 ERROR_LOG_PATH="[log file path]" # defaults to `./error.log`
 STORE_PATH="[data store path]" # defaults to `./store.sqlite`
 ```
-
-#### Re: Google Application Credentials
-
-This service requires access to the following Google APIs which must be enabled in the Google Cloud Console:
-
-- Google Sheets API
-- IAM Service Account Credentials API
-
-The service also requires the creation of a service account with the following roles:
-
-- Service Account Token Creator
-- Service Account User
-- Viewer
-- Workload Identity User (for GitHub Actions CI/CD)
 
 ### Run service
 
