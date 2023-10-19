@@ -1,8 +1,14 @@
+import type { QueueEvent } from '../api/types.d.ts';
+import type { Emitter } from 'mitt';
 import type { ILogObj } from 'tslog';
 
 import { writeFile } from 'fs/promises';
 import { Logger } from 'tslog';
 import dayjs from 'dayjs';
+import mitt from 'mitt';
+
+/** # `events` */
+const events: Emitter<QueueEvent> = mitt<QueueEvent>();
 
 /** # `log`
  * Creates a new instance of the `Logger` class, which is used throughout the application to log messages to the
@@ -60,4 +66,4 @@ async function errorHandler(error: Error, source: string) {
   log.error(source, error.message, error.stack);
 }
 
-export { log, today, checkForRequired, errorHandler, setTitle };
+export { events, log, today, checkForRequired, errorHandler, setTitle };

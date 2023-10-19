@@ -1,3 +1,6 @@
+import type { CronJob } from 'cron';
+import type { EventType } from 'mitt';
+
 interface EnvVars {
   [key: string]: any;
 
@@ -32,10 +35,19 @@ interface Job {
   schedule: string;
   append?: boolean;
   lastRun?: string;
+  nextRun?: string;
   createdAt?: string;
   updatedAt?: string;
   email?: string;
   tasks: Task[];
 }
 
-export type { Job, Task };
+interface Queue {
+  [key: string]: CronJob;
+}
+
+interface QueueEvent {
+  [key: EventType]: Job | string;
+}
+
+export type { Job, Task, Queue, QueueEvent };

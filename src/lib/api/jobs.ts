@@ -9,7 +9,7 @@ import { tmpdir } from 'os';
 
 import insertSheet from '../sheets/index.js';
 import store from '../common/store.js';
-import { log, checkForRequired } from '../common/util.js';
+import { events, log, checkForRequired } from '../common/util.js';
 import db from '../common/db.js';
 
 // add job
@@ -50,6 +50,7 @@ async function addJob(job: Job): Promise<Job | Error> {
 
   // log.debug('addJob', job);
   await store.set(job.id, job);
+  events.emit('jobAdded', job);
   return job;
 }
 
@@ -57,6 +58,7 @@ async function addJob(job: Job): Promise<Job | Error> {
 async function delJob(jobId: string) {
   // log.debug('delJob', jobId);
   await store.delete(jobId);
+  events.emit('jobDeleted', jobId);
   return {
     id: jobId,
     deletedAt: dayjs().format()
@@ -68,6 +70,7 @@ async function editJob(jobId: string, job: Job) {
   job.updatedAt = dayjs().format();
   // log.debug('editJob', jobId, job);
   await store.set(jobId, job);
+  events.emit('jobEdited', job);
   return job;
 }
 
@@ -78,6 +81,7 @@ async function toggleJob(jobId: string) {
   job.updatedAt = dayjs().format();
   // log.debug('toggleJob', jobId, job.active);
   await store.set(jobId, job);
+  events.emit('jobToggled', job);
   return job;
 }
 

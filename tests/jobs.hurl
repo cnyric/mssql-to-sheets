@@ -1,11 +1,18 @@
-# No `body`
+# No auth
 POST http://localhost:3000/jobs
 Content-Type: application/json
-Authorization: Bearer X1FMbjl3QXhQX1U4OWFCQk9xejBWU0JENkwzY3psLTdGTUZvMVFpcHdVM084SkRwdUJIVlRyaDhvZU9YRHdYcQ==
 [Options]
 variable: token="X1FMbjl3QXhQX1U4OWFCQk9xejBWU0JENkwzY3psLTdGTUZvMVFpcHdVM084SkRwdUJIVlRyaDhvZU9YRHdYcQ=="
 variable: sheetId="11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI"
+variable: database="KSYNC"
+variable: schedule="0 1 1 * *"
 variable: query="SELECT * FROM \"District\";"
+HTTP 401
+
+# No `body`
+POST http://localhost:3000/jobs
+Content-Type: application/json
+Authorization: Bearer {{token}}
 HTTP 400
 
 # No `name`
@@ -14,8 +21,8 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 {
   "spreadsheetId": "{{sheetId}}",
-  "database": "KSYNC",
-  "schedule": "0 1 1 * *",
+  "database": "{{database}}",
+  "schedule": "{{schedule}}",
   "tasks": [{"name": "test-task", "query": "{{query}}"}]
 }
 HTTP 400
@@ -26,8 +33,8 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 {
   "name": "test-job",
-  "database": "KSYNC",
-  "schedule": "0 1 1 * *",
+  "database": "{{database}}",
+  "schedule": "{{schedule}}",
   "tasks": [{"name": "test-task", "query": "{{query}}"}]
 }
 HTTP 400
@@ -39,7 +46,7 @@ Authorization: Bearer {{token}}
 {
   "name": "test-job",
   "spreadsheetId": "{{sheetId}}",
-  "schedule": "0 1 1 * *",
+  "schedule": "{{schedule}}",
   "tasks": [{"name": "test-task", "query": "{{query}}"}]
 }
 HTTP 400
@@ -51,7 +58,7 @@ Authorization: Bearer {{token}}
 {
   "name": "test-job",
   "spreadsheetId": "{{sheetId}}",
-  "database": "KSYNC",
+  "database": "{{database}}",
   "tasks": [{"name": "test-task", "query": "{{query}}"}]
 }
 HTTP 400
@@ -63,8 +70,8 @@ Authorization: Bearer {{token}}
 {
   "name": "test-job",
   "spreadsheetId": "{{sheetId}}",
-  "database": "KSYNC",
-  "schedule": "0 1 1 * *"
+  "database": "{{database}}",
+  "schedule": "{{schedule}}"
 }
 HTTP 400
 
@@ -75,8 +82,8 @@ Authorization: Bearer {{token}}
 {
   "name": "test-job",
   "spreadsheetId": "{{sheetId}}",
-  "database": "KSYNC",
-  "schedule": "0 1 1 * *",
+  "database": "{{database}}",
+  "schedule": "{{schedule}}",
   "tasks": []
 }
 HTTP 400
@@ -88,8 +95,8 @@ Authorization: Bearer {{token}}
 {
   "name": "test-job",
   "spreadsheetId": "{{sheetId}}",
-  "database": "KSYNC",
-  "schedule": "0 1 1 * *",
+  "database": "{{database}}",
+  "schedule": "{{schedule}}",
   "tasks": [{"name": "test-task", "query": "SELET * FROM \"District\";"}]
 }
 HTTP 400
@@ -101,8 +108,8 @@ Authorization: Bearer {{token}}
 {
   "name": "test-job",
   "spreadsheetId": "{{sheetId}}",
-  "database": "KSYNC",
-  "schedule": "0 1 1 * *",
+  "database": "{{database}}",
+  "schedule": "{{schedule}}",
   "tasks": [{"name": "test-task", "query": "{{query}}"}]
 }
 HTTP 201
