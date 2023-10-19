@@ -3,7 +3,6 @@ POST http://localhost:3000/jobs
 Content-Type: application/json
 [Options]
 variable: sheetId="11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI"
-variable: database="KSYNC"
 variable: schedule="0 1 1 * *"
 variable: query="SELECT * FROM \"District\";"
 HTTP 401

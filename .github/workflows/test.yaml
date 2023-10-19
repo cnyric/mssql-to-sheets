@@ -10,26 +10,25 @@ jobs:
       contents: 'read'
       id-token: 'write'
     steps:
-      - name: Install Node.js 18
-        uses: actions/setup-node@v2
+      - name: Install Node.js v18
+        uses: 'actions/setup-node@v2'
         with:
           node-version: 18
 
       - name: Install Hurl
-        uses: gacts/install-hurl@v1
+        uses: 'gacts/install-hurl@v1'
 
-      - name: Install SQL Server
-        uses: potatoqualitee/mssqlsuite@v1.7
+      - name: Install and start SQL Server
+        uses: 'potatoqualitee/mssqlsuite@v1.7'
         with:
           install: sqlengine, sqlclient, sqlpackage
-          sa-password: SQLp4ssw0rd1234
 
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: 'actions/checkout@v2'
 
       - name: Cache Node modules
         id: cache-npm
-        uses: actions/cache@v3
+        uses: 'actions/cache@v3'
         env:
           cache-name: npm
         with:
@@ -46,12 +45,12 @@ jobs:
 
       - name: Import test data
         run: |
-          sqlcmd -S localhost -U sa -P SQLp4ssw0rd1234 -i ./tests/test.sql
+          sqlcmd -S localhost -U sa -P dbatools.I0 -d tempdb -i ./tests/test.sql
 
       - name: Build app
         run: npm run build
 
-      - name: 'Authenticate to Google Cloud'
+      - name: Authenticate to Google Cloud
         uses: 'google-github-actions/auth@v1'
         with:
           workload_identity_provider: 'projects/344339347742/locations/global/workloadIdentityPools/github/providers/github'
@@ -64,13 +63,13 @@ jobs:
           DB_HOST: localhost
           DB_PASS: SQLp4ssw0rd1234
           DB_USER: sa
-          PORT: 8080
+          PORT: 3000
           TRANSACTION_KEY: _QLn9wAxP_U89aBBOqz0VSBD6L3czl-7FMFo1QipwU3O8JDpuBHVTrh8oeOXDwXq
 
       - name: Wait for app to start
         run: |
-          while ! nc -z localhost 8080; do sleep 1; done
+          while ! nc -z localhost 3000; do sleep 1; done
 
       - name: Run tests
         run: |
-          hurl --variable token=X1FMbjl3QXhQX1U4OWFCQk9xejBWU0JENkwzY3psLTdGTUZvMVFpcHdVM084SkRwdUJIVlRyaDhvZU9YRHdYcQ== --test tests/*.hurl
+          hurl --variable database=tempdb --variable token=X1FMbjl3QXhQX1U4OWFCQk9xejBWU0JENkwzY3psLTdGTUZvMVFpcHdVM084SkRwdUJIVlRyaDhvZU9YRHdYcQ== --test tests/*.hurl
