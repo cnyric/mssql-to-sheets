@@ -1,6 +1,6 @@
 # Export Microsoft SQL data to Google Sheets as-a-service
 
-[![Tests](https://github.com/cnyric/export-to-sheets/actions/workflows/test.yaml/badge.svg)](https://github.com/cnyric/export-to-sheets/actions/workflows/test.yaml)
+[![Tests](https://github.com/cnyric/mssql-to-sheets/actions/workflows/test.yaml/badge.svg)](https://github.com/cnyric/mssql-to-sheets/actions/workflows/test.yaml)
 
 Node.js service to automate exports of data from a SQL Server instance to Google Sheets on a user-specified schedule.
 
@@ -22,7 +22,7 @@ Roadmap:
 2. Click the `Share` button and add `sheets@edsapps.iam.gserviceaccount.com` (or your own service account) as an Editor.
 3. Grab the `spreadsheetId` value from the URL. It's the long string of characters between `/d/` and `/edit`.
 4. Visit [Crontab.guru](https://crontab.guru) to generate a cron schedule.
-5. Create a new [Hurl](https://hurl.dev/) file containing your API request (see the [`jobs`](https://github.com/cnyric/export-to-sheets/tree/main/jobs) folder for examples) or use your preferred REST client.
+5. Create a new [Hurl](https://hurl.dev/) file containing your API request (see the [`jobs`](https://github.com/cnyric/mssql-to-sheets/tree/main/jobs) folder for examples) or use your preferred REST client.
 
 ## API
 
@@ -94,8 +94,8 @@ department at [CNYRIC](https://www.cnyric.org/).
 ### Install
 
 ```sh
-git clone git@github.com:cnyric/export-to-sheets.git
-cd export-to-sheets
+git clone git@github.com:cnyric/mssql-to-sheets.git
+cd mssql-to-sheets
 npm i
 ```
 
