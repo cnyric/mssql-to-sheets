@@ -11,7 +11,7 @@ let queue: Queue = {};
 async function addToQueue(job: Job) {
   const jobId = <string>job.id;
   log.debug('addToQueue', jobId);
-  const item = new CronJob(job.schedule, async () => await doJob(job), null, true);
+  const item = new CronJob(job.schedule, async () => <void>await doJob(job), null, true);
   queue[jobId] = item;
   return item;
 }

@@ -90,14 +90,20 @@ function routes(service: Polka) {
   service.put('/jobs/:id/exec', async (req, res) => {
     try {
       const job = <Job>await getJob(req.params.id);
-      await doJob(job);
+      const exec = <Job | boolean>await doJob(job, true);
 
-      res.statusCode = 202;
-      res.end(
-        stringify({
-          status: status[202]
-        })
-      );
+      let response;
+      if (exec === false) {
+        res.statusCode = 400;
+        response = {
+          status: status[400]
+        };
+      } else {
+        res.statusCode = 202;
+        response = job;
+      }
+
+      res.end(stringify(response));
     } catch (err) {
       errorHandler(<Error>err, req, res);
     }
