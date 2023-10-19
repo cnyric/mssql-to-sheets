@@ -10,6 +10,12 @@ Features:
 - Queries are linted with [tsqllint](https://github.com/tsqllint/tsqllint).
 - Uses [Hurl](https://hurl.dev/) for testing.
 
+Roadmap:
+
+- [ ] Email alerts on job completion
+- [ ] Support for multiple database instances
+- [ ] Frontend interface
+
 ## Usage
 
 1. Create a new [Google Sheets](https://sheets.google.com) spreadsheet or edit the spreadsheet you wish to update.
@@ -129,9 +135,23 @@ ERROR_LOG_PATH="[log file path]" # defaults to `./error.log`
 STORE_PATH="[data store path]" # defaults to `./store.sqlite`
 ```
 
+#### Re: Google Application Credentials
+
+This service requires access to the following Google APIs which must be enabled in the Google Cloud Console:
+
+- Google Sheets API
+- IAM Service Account Credentials API
+
+The service also requires the creation of a service account with the following roles:
+
+- Service Account Token Creator
+- Service Account User
+- Viewer
+- Workload Identity User (for GitHub Actions CI/CD)
+
 ### Run service
 
-Launches a web server on port 3000.
+Launches a web server on the user-specified port or `3000` by default.
 
 ```sh
 npm start
@@ -141,7 +161,7 @@ npm start
 
 ### Develop
 
-Launches a web server on port 3000 and restarts when files change.
+Launches a web server, recompiling and restarting the server on file changes.
 
 ```sh
 npm run dev
