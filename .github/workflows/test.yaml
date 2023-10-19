@@ -73,3 +73,11 @@ jobs:
       - name: Run tests
         run: |
           hurl --variable database=tempdb --variable token=X1FMbjl3QXhQX1U4OWFCQk9xejBWU0JENkwzY3psLTdGTUZvMVFpcHdVM084SkRwdUJIVlRyaDhvZU9YRHdYcQ== --test tests/*.hurl
+
+      - name: Preserve run artifacts
+        uses: 'actions/upload-artifact@v3'
+        with:
+          name: error-log
+          path: |
+            error.log
+            store.sqlite
