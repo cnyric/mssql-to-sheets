@@ -47,26 +47,23 @@ department at [CNYRIC](https://www.cnyric.org/).
 
 - `GET`: Returns list of jobs.
 - `POST`: Creates a new job.
+
   - Parameters:
     - `name`: Job name
     - `schedule`: Cron schedule
     - `spreadsheetId`: Google Sheet ID
+    - `append`: Add new worksheets (vs. overwrite existing)
+    - `email`: Email to alert on job completion (not implemented)
     - `tasks`: Array of tasks
-      - `query`: Raw SQL query or URL to a SQL file
-      - `name`: Worksheet name
+      - `query`: Raw SQL query or SQL file URL (http/s only)
+      - `name`: Worksheet name (will be appended with date)
 
 #### `/jobs/:id`
 
 - `GET`: Returns job details.
 - `PUT`: Updates job.
 
-  - Parameters:
-    - `name`: Job name
-    - `schedule`: Cron schedule
-    - `spreadsheetId`: Google Sheet ID
-    - `tasks`: Array of tasks
-      - `query`: Raw SQL query or URL to a SQL file
-      - `name`: Worksheet name
+  - Parameters same as above for `POST` request.
 
 - `DELETE`: Deletes job.
 
