@@ -78,6 +78,7 @@ jobs:
           HURL_sheetId: 11AbOJlQLxbGi1ATEI8gncnUlVde2FHNT7RZdcaGySzI
           HURL_schedule: '0 1 1 * *'
           HURL_query: 'SELECT * FROM "testTable";'
+          HURL_name: 'test-job'
         run: |
           hurl --test tests/*.hurl
 
