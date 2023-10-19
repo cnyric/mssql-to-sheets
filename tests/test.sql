@@ -1,8 +1,8 @@
-CREATE DATABASE test;
+CREATE DATABASE testDb;
 
-USE test;
+USE testDb;
 
-CREATE TABLE test (
+CREATE TABLE testTable (
   id INT PRIMARY KEY,
   name VARCHAR(50),
   age INT,
