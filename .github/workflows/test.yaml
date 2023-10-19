@@ -76,8 +76,9 @@ jobs:
 
       - name: Preserve run artifacts
         uses: 'actions/upload-artifact@v3'
+        if: failure()
         with:
-          name: error-log
+          name: run-artifacts
           path: |
             error.log
             store.sqlite
