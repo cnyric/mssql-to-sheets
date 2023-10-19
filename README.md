@@ -1,4 +1,4 @@
-# Export Microsoft SQL data to Google Sheets as-a-service
+# Export MSSQL data to Google Sheets as-a-service
 
 [![Tests](https://github.com/cnyric/mssql-to-sheets/actions/workflows/test.yaml/badge.svg)](https://github.com/cnyric/mssql-to-sheets/actions/workflows/test.yaml)
 
@@ -24,8 +24,9 @@ Roadmap:
 4. Visit [Crontab.guru](https://crontab.guru) to generate a cron schedule.
 5. Create a new [Hurl](https://hurl.dev/) file containing your API request (see the [`jobs`](https://github.com/cnyric/mssql-to-sheets/tree/main/jobs) folder for examples) or use your preferred REST client.
 
-<small>\*The spreadsheet must be manually created because the service account user is not a member of the
-organization's Google Workspace and therefore does not have permissions to create a document within the workspace.</small>
+\*The spreadsheet must be manually created because the application was developed with a service account that does not
+have direct access to the organization's Google Workspace and therefore does not have permissions to create a document within the
+workspace. This will be remedied in a future release.
 
 ## API
 
