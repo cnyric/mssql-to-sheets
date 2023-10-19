@@ -117,7 +117,7 @@ It also requires the creation of a service account with the following roles:
 - Service Account Token Creator
 - Service Account User
 - Viewer
-- Workload Identity User (for GitHub Actions CI/CD)
+- Workload Identity User (for [GitHub Actions CI/CD](https://cloud.google.com/blog/products/identity-security/enabling-keyless-authentication-from-github-actions))
 
 Tokens can be provided to the application by the [`gcloud` CLI](https://cloud.google.com/sdk/docs/install) or by a [service account key](https://cloud.google.com/iam/docs/keys-create-delete) file.
 
