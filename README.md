@@ -24,9 +24,8 @@ Roadmap:
 4. Visit [Crontab.guru](https://crontab.guru) to generate a cron schedule.
 5. Create a new [Hurl](https://hurl.dev/) file containing your API request (see the [`jobs`](https://github.com/cnyric/mssql-to-sheets/tree/main/jobs) folder for examples) or use your preferred REST client.
 
-<small>\*The spreadsheet must be manually created because the generic service account user is not a member of the
-organization's Google Workspace and therefore does not have permissions to create a document within the workspace. A
-workaround is being pursued.</small>
+<small>\*The spreadsheet must be manually created because the service account user is not a member of the
+organization's Google Workspace and therefore does not have permissions to create a document within the workspace.</small>
 
 ## API
 
