@@ -66,8 +66,8 @@ async function addSheet(
     };
 
     await sheets.spreadsheets.values.batchClear(clearQuery);
-    const pages = await sheets.spreadsheets.batchUpdate(updateQuery);
-    return [sheet, <SheetProperties[]>pages.data.replies?.map(reply => reply.addSheet?.properties)];
+    await sheets.spreadsheets.batchUpdate(updateQuery);
+    return [sheet, <SheetProperties[]>sheet.data.sheets?.map(sheet => sheet.properties)];
   }
 }
 

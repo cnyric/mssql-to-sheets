@@ -8,7 +8,7 @@ async function insertSheet(spreadsheetId: string, sheetName: string, data: any[]
 
   if (sheet) {
     const [sheetInfo, pages] = sheet;
-    const sheetId = <number>pages.find(page => page.title === title)?.sheetId;
+    const sheetId = <number>pages.find(page => page?.title === title)?.sheetId;
     await updateSheet(sheetInfo, sheetId, title, data);
   }
 }

@@ -1,3 +1,9 @@
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv extends EnvVars {}
+  }
+}
+
 interface EnvVars {
   [key: string]: any;
 
@@ -7,14 +13,9 @@ interface EnvVars {
   PORT?: number;
   TRANSACTION_KEY?: string;
   GOOGLE_APPLICATION_CREDENTIALS?: string;
+  CREDENTIAL_FILE_PATH?: string;
   ERROR_LOG_PATH?: string;
   STORE_PATH?: string;
-}
-
-declare global {
-  namespace NodeJS {
-    interface ProcessEnv extends EnvVars {}
-  }
 }
 
 declare module 'mitt' {
