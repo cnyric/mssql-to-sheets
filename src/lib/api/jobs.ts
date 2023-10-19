@@ -112,9 +112,6 @@ async function doJob(job: Job) {
       await insertSheet(job.spreadsheetId, job.name, data, job.append);
     }
     log.info('doJob', job.id, `\`https://docs.google.com/spreadsheets/d/${job.spreadsheetId}/\` updated successfully`);
-    return job;
-  } else {
-    return false;
   }
 }
 
