@@ -41,7 +41,7 @@ async function addJob(job: Job): Promise<Job | Error> {
     const tmpFile = `/${tmpdir()}/${task.id}.sql`;
     // log.debug('addJob', tmpFile);
     await writeFile(tmpFile, task.query);
-    await execa(`tsqllint`, [tmpFile]);
+    await execa(`${process.cwd()}/node_modules/.bin/tsqllint`, [tmpFile]);
     await unlink(tmpFile);
 
     tasks.push(task);
