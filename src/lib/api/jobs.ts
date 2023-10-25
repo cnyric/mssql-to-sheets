@@ -104,21 +104,20 @@ async function getJob(jobId?: string): Promise<Job | Job[] | void> {
 
 // do job
 async function doJob(job: Job, manual: boolean = false) {
-  if (job !== undefined) {
-    // log.debug('doJob', job.id);
-    if (!job.active && manual) {
-      return false;
-    }
-
-    for (const task of job.tasks) {
-      const data = await db(job.database).raw(task.query);
-      // log.debug('doJob', job.id, data);
-      await insertSheet(job.spreadsheetId, job.name, data, job.append);
-    }
-    log.info('doJob', job.id, `\`https://docs.google.com/spreadsheets/d/${job.spreadsheetId}/\` updated successfully`);
-
-    if (manual) return job;
+  // log.debug('doJob', job.id);
+  if (!job?.active && manual) {
+    return false;
   }
+
+  for (const task of job?.tasks) {
+    const data = await db(job?.database).raw(task?.query);
+    log.debug('doJob', job?.id, task?.id, task?.name);
+    await insertSheet(job?.spreadsheetId, task?.name, data, job?.append);
+  }
+
+  log.info('doJob', job?.id, `\`https://docs.google.com/spreadsheets/d/${job?.spreadsheetId}/\` updated successfully`);
+
+  if (manual) return job;
 }
 
 export { addJob, editJob, toggleJob, delJob, getJob, doJob };
