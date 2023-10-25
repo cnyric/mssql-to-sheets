@@ -1,7 +1,7 @@
 import type { SheetInfo, SheetProperties } from './types.js';
 
 import sheets from './client.js';
-import { log, setTitle } from '../common/util.js';
+import { log, today, setTitle } from '../common/util.js';
 import deleteSheet from './delete.js';
 
 async function addSheet(
@@ -18,7 +18,7 @@ async function addSheet(
 
   if (append === false) {
     if (sheet.data.sheets && sheet.data.sheets?.length !== 1) {
-      const old = sheet.data.sheets?.filter(s => s.properties?.title !== title) ?? [];
+      const old = sheet.data.sheets?.filter(s => !s.properties?.title?.endsWith(today)) ?? [];
       for (const s of old) {
         await deleteSheet(sheet, <number>s.properties?.sheetId);
       }
