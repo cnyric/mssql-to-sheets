@@ -19,7 +19,10 @@ function db(database: string): Knex<any, unknown[]> {
       host: process.env['DB_HOST'],
       user: process.env['DB_USER'],
       password: process.env['DB_PASS'],
-      database
+      database,
+      options: {
+        trustServerCertificate: true
+      }
     }
   });
 }
