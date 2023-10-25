@@ -17,7 +17,7 @@ async function addSheet(
   // log.debug('addSheet', title, { sheet });
 
   if (append === false) {
-    if (sheet.data.sheets && sheet.data.sheets?.length > 1) {
+    if (sheet.data.sheets && sheet.data.sheets?.length !== 1) {
       const old = sheet.data.sheets?.filter(s => s.properties?.title !== title) ?? [];
       for (const s of old) {
         await deleteSheet(sheet, <number>s.properties?.sheetId);
