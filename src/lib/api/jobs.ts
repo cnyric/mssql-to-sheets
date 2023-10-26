@@ -67,9 +67,10 @@ async function delJob(jobId: string) {
 
 // edit job
 async function editJob(jobId: string, job: Job) {
+  const oldJob = <Job>await store.get(jobId);
   job.updatedAt = dayjs().format();
   // log.debug('editJob', jobId, job);
-  await store.set(jobId, job);
+  await store.set(jobId, { ...oldJob, ...job });
   events.emit('jobEdited', job);
   return job;
 }
