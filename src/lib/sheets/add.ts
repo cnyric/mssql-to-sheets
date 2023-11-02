@@ -20,7 +20,7 @@ async function addSheet(
     if (sheet.data.sheets && sheet.data.sheets?.length !== 1) {
       const old =
         sheet.data.sheets?.filter(
-          s => s.properties?.title?.startsWith(sheetName) && !s.properties?.title?.endsWith(today)
+          s => s.properties?.title?.startsWith(sheetName) && !s.properties?.title?.endsWith(today())
         ) ?? [];
       for (const s of old) {
         await deleteSheet(sheet, <number>s.properties?.sheetId);

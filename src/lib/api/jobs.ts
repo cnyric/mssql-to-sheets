@@ -2,6 +2,7 @@ import type { DeserializedData } from '@keyvhq/core';
 import type { Job } from './types.js';
 
 import dayjs from 'dayjs';
+import stringify from 'safe-stable-stringify';
 import { nanoid } from 'nanoid';
 import { writeFile, unlink } from 'fs/promises';
 import { execa } from 'execa';
@@ -9,8 +10,9 @@ import { tmpdir } from 'os';
 
 import insertSheet from '../sheets/index.js';
 import store from '../common/store.js';
-import { events, log, checkForRequired } from '../common/util.js';
 import db from '../common/db.js';
+import { events, log, checkForRequired } from '../common/util.js';
+import { getQueue } from './cron.js';
 
 // add job
 async function addJob(job: Job): Promise<Job | Error> {
@@ -106,7 +108,7 @@ async function getJob(jobId?: string): Promise<Job | Job[] | void> {
 // do job
 async function doJob(job: Job, manual: boolean = false) {
   // log.debug('doJob', job.id);
-  if (!job?.active && manual) {
+  if (!job?.active && manual === true) {
     return false;
   }
 
@@ -118,7 +120,12 @@ async function doJob(job: Job, manual: boolean = false) {
 
   log.info('doJob', job?.id, `\`https://docs.google.com/spreadsheets/d/${job?.spreadsheetId}/\` updated successfully`);
 
-  if (manual) return job;
+  if (manual === true)
+    return {
+      date: dayjs().format(),
+      job,
+      queue: JSON.parse(stringify(getQueue()[<string>job.id]))
+    };
 }
 
 export { addJob, editJob, toggleJob, delJob, getJob, doJob };

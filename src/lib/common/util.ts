@@ -20,7 +20,9 @@ const log: Logger<ILogObj> = new Logger();
 /** # `today`
  * @returns A string that is the current date in the format `YYYY_MM_DD`.
  */
-const today = dayjs().format('YYYY_MM_DD');
+function today() {
+  return dayjs().format('YYYY_MM_DD');
+}
 
 /** # `setTitle`
  * This function is used to create unique titles or filenames for files or logs that are created by the application.
@@ -28,7 +30,7 @@ const today = dayjs().format('YYYY_MM_DD');
  * @returns A string that is the concatenation of `text` and the `today` constant variable, separated by an underscore.
  */
 function setTitle(text: string) {
-  return `${text}_${today}`;
+  return `${text}_${today()}`;
 }
 
 /** # `checkForRequired`

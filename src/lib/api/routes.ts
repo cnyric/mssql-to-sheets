@@ -100,7 +100,7 @@ function routes(service: Polka) {
         };
       } else {
         res.statusCode = 202;
-        response = job;
+        response = exec;
       }
 
       res.end(stringify(response));
