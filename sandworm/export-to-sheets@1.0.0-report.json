@@ -1,14 +1,14 @@
 {
   "name": "export-to-sheets",
   "version": "1.0.0",
-  "createdAt": 1698167058594,
+  "createdAt": 1701890893937,
   "system": {
     "sandwormVersion": "1.56.1",
     "nodeVersion": "18.18.2",
     "lockfileVersion": 3,
     "packageManager": "npm",
     "packageType": "npm",
-    "packageManagerVersion": "9.8.1"
+    "packageManagerVersion": "10.2.4"
   },
   "configuration": {
     "includeDev": false,
@@ -25,7 +25,57 @@
     ]
   },
   "rootVulnerabilities": [],
-  "dependencyVulnerabilities": [],
+  "dependencyVulnerabilities": [
+    {
+      "findings": {
+        "sources": [
+          {
+            "name": "axios",
+            "version": "1.5.0",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "@orangeopensource/hurl",
+            "version": "4.1.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "axios",
+            "version": "1.5.0",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "@orangeopensource/hurl",
+            "version": "4.1.0",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "@orangeopensource/hurl>axios"
+        ]
+      },
+      "source": 1094889,
+      "githubAdvisoryId": "GHSA-wf5p-g6vw-rhxx",
+      "name": "axios",
+      "title": "Axios Cross-Site Request Forgery Vulnerability",
+      "type": "vulnerability",
+      "url": "https://github.com/advisories/GHSA-wf5p-g6vw-rhxx",
+      "severity": "moderate",
+      "range": ">=0.8.1 <1.6.0"
+    }
+  ],
   "licenseUsage": [
     {
       "string": "MIT",
@@ -83,11 +133,11 @@
         },
         {
           "name": "@azure/core-util",
-          "version": "1.5.0"
+          "version": "1.6.1"
         },
         {
           "name": "@azure/identity",
-          "version": "2.1.0"
+          "version": "3.4.1"
         },
         {
           "name": "define-lazy-prop",
@@ -102,10 +152,6 @@
           "version": "8.4.2"
         },
         {
-          "name": "uuid",
-          "version": "8.3.2"
-        },
-        {
           "name": "@azure/keyvault-keys",
           "version": "4.7.2"
         },
@@ -115,19 +161,19 @@
         },
         {
           "name": "@azure/msal-browser",
-          "version": "2.38.2"
+          "version": "3.6.0"
         },
         {
           "name": "@azure/msal-common",
-          "version": "13.3.0"
-        },
-        {
-          "name": "@azure/msal-common",
-          "version": "7.6.0"
+          "version": "14.5.0"
         },
         {
           "name": "@azure/msal-node",
-          "version": "1.18.3"
+          "version": "2.6.0"
+        },
+        {
+          "name": "uuid",
+          "version": "8.3.2"
         },
         {
           "name": "@keyvhq/core",
@@ -307,7 +353,7 @@
         },
         {
           "name": "cron",
-          "version": "3.1.4"
+          "version": "3.1.6"
         },
         {
           "name": "cross-spawn",
@@ -783,7 +829,7 @@
         },
         {
           "name": "nanoid",
-          "version": "5.0.2"
+          "version": "5.0.4"
         },
         {
           "name": "native-duplexpair",
@@ -1035,7 +1081,7 @@
         },
         {
           "name": "tedious",
-          "version": "16.5.0"
+          "version": "16.6.1"
         },
         {
           "name": "through",
@@ -1275,15 +1321,15 @@
         },
         {
           "name": "gcp-metadata",
-          "version": "6.0.0"
+          "version": "6.1.0"
         },
         {
           "name": "google-auth-library",
-          "version": "9.1.0"
+          "version": "9.4.1"
         },
         {
           "name": "googleapis",
-          "version": "128.0.0"
+          "version": "129.0.0"
         },
         {
           "name": "googleapis-common",
@@ -1699,7 +1745,7 @@
         "affects": [
           {
             "name": "googleapis",
-            "version": "128.0.0",
+            "version": "129.0.0",
             "flags": {
               "prod": true
             }
@@ -1722,7 +1768,7 @@
         "rootDependencies": [
           {
             "name": "googleapis",
-            "version": "128.0.0",
+            "version": "129.0.0",
             "flags": {
               "prod": true
             }
@@ -1756,7 +1802,7 @@
         "affects": [
           {
             "name": "googleapis",
-            "version": "128.0.0",
+            "version": "129.0.0",
             "flags": {
               "prod": true
             }
@@ -1779,7 +1825,7 @@
         "rootDependencies": [
           {
             "name": "googleapis",
-            "version": "128.0.0",
+            "version": "129.0.0",
             "flags": {
               "prod": true
             }
