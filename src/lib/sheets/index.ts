@@ -1,6 +1,6 @@
+import { setTitle } from '../common/util.js';
 import addSheet from './add.js';
 import updateSheet from './update.js';
-import { setTitle } from '../common/util.js';
 
 async function insertSheet(spreadsheetId: string, sheetName: string, data: any[], append: boolean = false) {
   const sheet = await addSheet(spreadsheetId, sheetName, append);

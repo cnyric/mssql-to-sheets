@@ -4,9 +4,9 @@ import type { Job } from './types.js';
 import status from 'http-status';
 import stringify from 'safe-stable-stringify';
 
-import errorHandler from './errors.js';
-import { addJob, delJob, getJob, editJob, doJob, toggleJob } from './jobs.js';
 import { getQueue } from './cron.js';
+import errorHandler from './errors.js';
+import { addJob, delJob, doJob, editJob, getJob, toggleJob } from './jobs.js';
 
 function routes(service: Polka) {
   // root

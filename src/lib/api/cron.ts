@@ -1,10 +1,10 @@
-import type { Job, Queue } from './types.d.ts';
 import type { Handler } from 'mitt';
+import type { Job, Queue } from './types.d.ts';
 
 import { CronJob } from 'cron';
 
+import { events, log } from '../common/util.js';
 import { doJob, getJob } from './jobs.js';
-import { log, events } from '../common/util.js';
 
 let queue: Queue = {};
 
@@ -63,4 +63,4 @@ async function initQueue() {
   }));
 }
 
-export { addToQueue, getQueue, replaceInQueue, deleteFromQueue, initQueue, activateJob, deactivateJob };
+export { activateJob, addToQueue, deactivateJob, deleteFromQueue, getQueue, initQueue, replaceInQueue };

@@ -33,4 +33,4 @@ interface QueueEvent {
   [key: EventType]: Job | string;
 }
 
-export type { Job, Task, Queue, QueueEvent };
+export type { Job, Queue, QueueEvent, Task };

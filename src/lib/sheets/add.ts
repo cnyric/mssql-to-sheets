@@ -1,7 +1,7 @@
 import type { SheetInfo, SheetProperties } from './types.js';
 
+import { setTitle, today } from '../common/util.js';
 import sheets from './client.js';
-import { log, today, setTitle } from '../common/util.js';
 import deleteSheet from './delete.js';
 
 async function addSheet(

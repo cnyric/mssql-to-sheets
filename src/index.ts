@@ -1,9 +1,8 @@
 import { nanoid } from 'nanoid';
 
-import service from './lib/api/index.js';
-import { log, errorHandler } from './lib/common/util.js';
-import loadEnv from './lib/common/env.js';
 import { initQueue } from './lib/api/cron.js';
+import service from './lib/api/index.js';
+import { env, errorHandler, log } from './lib/common/util.js';
 
 process.on('SIGTERM', async e => {
   await errorHandler(new Error(e), 'SIGTERM');
@@ -16,17 +15,15 @@ process.on('uncaughtException', async err => {
 });
 
 try {
-  loadEnv();
-
-  const port = process.env['PORT'] ?? 3000;
-  const token = process.env['TRANSACTION_KEY'] ?? nanoid(64);
+  const port = env('PORT') ?? 3000;
+  const token = env('TRANSACTION_KEY') ?? nanoid(64);
 
   initQueue();
 
   service.listen(port, () => {
     log.info(`Server started on port ${port}`);
 
-    if (!process.env['TRANSACTION_KEY']) {
+    if (!env('TRANSACTION_KEY')) {
       log.info(`Transaction key: ${token}`);
     }
   });

@@ -1,11 +1,12 @@
-import type { QueueEvent } from '../api/types.d.ts';
 import type { Emitter } from 'mitt';
 import type { ILogObj } from 'tslog';
+import type { QueueEvent } from '../api/types.d.ts';
 
-import { writeFile } from 'fs/promises';
-import { Logger } from 'tslog';
 import dayjs from 'dayjs';
+import { config as dotenv } from 'dotenv';
+import { writeFile } from 'fs/promises';
 import mitt from 'mitt';
+import { Logger } from 'tslog';
 
 /** # `events` */
 const events: Emitter<QueueEvent> = mitt<QueueEvent>();
@@ -58,7 +59,7 @@ function checkForRequired<T, K extends keyof T>(obj: Partial<T>, prop: K, msg?: 
  */
 async function errorHandler(error: Error, source: string) {
   await writeFile(
-    <string>process.env['ERROR_LOG_PATH'] ?? `${process.cwd()}/error.log`,
+    <string>env('ERROR_LOG_PATH') ?? `${process.cwd()}/error.log`,
     `${dayjs().format()}: ${source} - ${error.message}\n`,
     {
       flag: 'a'
@@ -68,4 +69,16 @@ async function errorHandler(error: Error, source: string) {
   log.error(source, error.message, error.stack);
 }
 
-export { events, log, today, checkForRequired, errorHandler, setTitle };
+function env(key: string): string {
+  const processEnv: { [key: string]: any } = {};
+
+  dotenv({ processEnv });
+
+  ['DB_HOST', 'DB_USER', 'DB_PASS'].forEach(v => {
+    checkForRequired(processEnv, v);
+  });
+
+  return processEnv[key];
+}
+
+export { checkForRequired, env, errorHandler, events, log, setTitle, today };

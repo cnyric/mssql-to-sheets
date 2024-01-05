@@ -1,14 +1,14 @@
 {
   "name": "export-to-sheets",
   "version": "1.0.0",
-  "createdAt": 1701890893937,
+  "createdAt": 1704485435454,
   "system": {
     "sandwormVersion": "1.56.1",
     "nodeVersion": "18.18.2",
-    "lockfileVersion": 3,
-    "packageManager": "npm",
+    "lockfileVersion": "6.0",
+    "packageManager": "pnpm",
     "packageType": "npm",
-    "packageManagerVersion": "10.2.4"
+    "packageManagerVersion": "8.14.0"
   },
   "configuration": {
     "includeDev": false,
@@ -66,14 +66,54 @@
           "@orangeopensource/hurl>axios"
         ]
       },
-      "source": 1094889,
       "githubAdvisoryId": "GHSA-wf5p-g6vw-rhxx",
-      "name": "axios",
+      "id": 1094889,
       "title": "Axios Cross-Site Request Forgery Vulnerability",
-      "type": "vulnerability",
       "url": "https://github.com/advisories/GHSA-wf5p-g6vw-rhxx",
       "severity": "moderate",
-      "range": ">=0.8.1 <1.6.0"
+      "name": "axios",
+      "range": ">=0.8.1 <1.6.0",
+      "type": "vulnerability",
+      "recommendation": "Upgrade to version 1.6.0 or later",
+      "advisory": {
+        "findings": [
+          {
+            "version": "1.5.0",
+            "paths": [
+              ". > @orangeopensource/hurl@4.1.0 > axios@1.5.0"
+            ]
+          }
+        ],
+        "metadata": null,
+        "vulnerable_versions": ">=0.8.1 <1.6.0",
+        "module_name": "axios",
+        "severity": "moderate",
+        "github_advisory_id": "GHSA-wf5p-g6vw-rhxx",
+        "cves": [
+          "CVE-2023-45857"
+        ],
+        "access": "public",
+        "patched_versions": ">=1.6.0",
+        "cvss": {
+          "score": 6.5,
+          "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "updated": "2023-11-16T19:59:09.000Z",
+        "recommendation": "Upgrade to version 1.6.0 or later",
+        "cwe": [
+          "CWE-352"
+        ],
+        "found_by": null,
+        "deleted": null,
+        "id": 1094889,
+        "references": "- https://nvd.nist.gov/vuln/detail/CVE-2023-45857\n- https://github.com/axios/axios/issues/6006\n- https://github.com/axios/axios/issues/6022\n- https://github.com/axios/axios/pull/6028\n- https://github.com/axios/axios/commit/96ee232bd3ee4de2e657333d4d2191cd389e14d0\n- https://github.com/axios/axios/releases/tag/v1.6.0\n- https://security.snyk.io/vuln/SNYK-JS-AXIOS-6032459\n- https://github.com/advisories/GHSA-wf5p-g6vw-rhxx",
+        "created": "2023-11-08T21:30:37.000Z",
+        "reported_by": null,
+        "title": "Axios Cross-Site Request Forgery Vulnerability",
+        "npm_advisory_id": null,
+        "overview": "An issue discovered in Axios 0.8.1 through 1.5.1 inadvertently reveals the confidential XSRF-TOKEN stored in cookies by including it in the HTTP header X-XSRF-TOKEN for every request made to any host allowing attackers to view sensitive information.",
+        "url": "https://github.com/advisories/GHSA-wf5p-g6vw-rhxx"
+      }
     }
   ],
   "licenseUsage": [
@@ -117,15 +157,7 @@
         },
         {
           "name": "@azure/core-rest-pipeline",
-          "version": "1.12.1"
-        },
-        {
-          "name": "agent-base",
-          "version": "6.0.2"
-        },
-        {
-          "name": "https-proxy-agent",
-          "version": "5.0.1"
+          "version": "1.13.0"
         },
         {
           "name": "@azure/core-tracing",
@@ -138,18 +170,6 @@
         {
           "name": "@azure/identity",
           "version": "3.4.1"
-        },
-        {
-          "name": "define-lazy-prop",
-          "version": "2.0.0"
-        },
-        {
-          "name": "is-docker",
-          "version": "2.2.1"
-        },
-        {
-          "name": "open",
-          "version": "8.4.2"
         },
         {
           "name": "@azure/keyvault-keys",
@@ -172,10 +192,6 @@
           "version": "2.6.0"
         },
         {
-          "name": "uuid",
-          "version": "8.3.2"
-        },
-        {
           "name": "@keyvhq/core",
           "version": "2.1.0"
         },
@@ -186,10 +202,6 @@
         {
           "name": "@keyvhq/sqlite",
           "version": "2.1.0"
-        },
-        {
-          "name": "brace-expansion",
-          "version": "2.0.1"
         },
         {
           "name": "@pkgjs/parseargs",
@@ -205,15 +217,15 @@
         },
         {
           "name": "@types/luxon",
-          "version": "3.3.2"
+          "version": "3.3.7"
         },
         {
           "name": "@types/node",
-          "version": "18.18.6"
+          "version": "18.19.3"
         },
         {
           "name": "@types/yauzl",
-          "version": "2.10.2"
+          "version": "2.10.3"
         },
         {
           "name": "abort-controller",
@@ -221,15 +233,19 @@
         },
         {
           "name": "agent-base",
+          "version": "6.0.2"
+        },
+        {
+          "name": "agent-base",
           "version": "7.1.0"
         },
         {
           "name": "ansi-regex",
-          "version": "5.0.1"
+          "version": "6.0.1"
         },
         {
           "name": "ansi-styles",
-          "version": "4.3.0"
+          "version": "6.2.1"
         },
         {
           "name": "array-buffer-byte-length",
@@ -265,7 +281,11 @@
         },
         {
           "name": "bl",
-          "version": "6.0.7"
+          "version": "1.2.3"
+        },
+        {
+          "name": "bl",
+          "version": "6.0.9"
         },
         {
           "name": "bluebird",
@@ -276,28 +296,16 @@
           "version": "1.20.2"
         },
         {
-          "name": "debug",
-          "version": "2.6.9"
-        },
-        {
-          "name": "iconv-lite",
-          "version": "0.4.24"
-        },
-        {
-          "name": "ms",
-          "version": "2.0.0"
-        },
-        {
-          "name": "buffer",
-          "version": "6.0.3"
-        },
-        {
-          "name": "buffer-alloc",
-          "version": "1.2.0"
+          "name": "brace-expansion",
+          "version": "2.0.1"
         },
         {
           "name": "buffer-alloc-unsafe",
           "version": "1.1.0"
+        },
+        {
+          "name": "buffer-alloc",
+          "version": "1.2.0"
         },
         {
           "name": "buffer-crc32",
@@ -308,24 +316,24 @@
           "version": "1.0.0"
         },
         {
+          "name": "buffer",
+          "version": "5.7.1"
+        },
+        {
+          "name": "buffer",
+          "version": "6.0.3"
+        },
+        {
           "name": "bytes",
           "version": "3.1.2"
         },
         {
           "name": "call-bind",
-          "version": "1.0.2"
+          "version": "1.0.5"
         },
         {
           "name": "clone",
           "version": "1.0.4"
-        },
-        {
-          "name": "color-convert",
-          "version": "2.0.1"
-        },
-        {
-          "name": "color-name",
-          "version": "1.1.4"
         },
         {
           "name": "colorette",
@@ -338,6 +346,10 @@
         {
           "name": "commander",
           "version": "10.0.1"
+        },
+        {
+          "name": "commander",
+          "version": "2.20.3"
         },
         {
           "name": "console.table",
@@ -364,36 +376,24 @@
           "version": "2.0.10"
         },
         {
-          "name": "commander",
-          "version": "2.20.3"
-        },
-        {
           "name": "dayjs",
           "version": "1.11.10"
+        },
+        {
+          "name": "debug",
+          "version": "2.6.9"
         },
         {
           "name": "debug",
           "version": "4.3.4"
         },
         {
-          "name": "decompress",
-          "version": "4.2.1"
-        },
-        {
           "name": "decompress-tar",
           "version": "4.1.1"
         },
         {
-          "name": "is-stream",
-          "version": "1.1.0"
-        },
-        {
           "name": "decompress-tarbz2",
           "version": "4.1.1"
-        },
-        {
-          "name": "file-type",
-          "version": "6.2.0"
         },
         {
           "name": "decompress-targz",
@@ -404,20 +404,8 @@
           "version": "4.0.1"
         },
         {
-          "name": "file-type",
-          "version": "3.9.0"
-        },
-        {
-          "name": "get-stream",
-          "version": "2.3.1"
-        },
-        {
-          "name": "pify",
-          "version": "2.3.0"
-        },
-        {
-          "name": "is-stream",
-          "version": "3.0.0"
+          "name": "decompress",
+          "version": "4.2.1"
         },
         {
           "name": "defaults",
@@ -426,6 +414,10 @@
         {
           "name": "define-data-property",
           "version": "1.1.1"
+        },
+        {
+          "name": "define-lazy-prop",
+          "version": "2.0.0"
         },
         {
           "name": "define-properties",
@@ -444,6 +436,10 @@
           "version": "1.2.0"
         },
         {
+          "name": "eastasianwidth",
+          "version": "0.2.0"
+        },
+        {
           "name": "easy-table",
           "version": "1.1.0"
         },
@@ -453,7 +449,7 @@
         },
         {
           "name": "emoji-regex",
-          "version": "8.0.0"
+          "version": "9.2.2"
         },
         {
           "name": "end-of-stream",
@@ -461,7 +457,7 @@
         },
         {
           "name": "es-abstract",
-          "version": "1.22.2"
+          "version": "1.22.3"
         },
         {
           "name": "es-aggregate-error",
@@ -469,7 +465,7 @@
         },
         {
           "name": "es-set-tostringtag",
-          "version": "2.0.1"
+          "version": "2.0.2"
         },
         {
           "name": "es-to-primitive",
@@ -496,16 +492,8 @@
           "version": "8.0.1"
         },
         {
-          "name": "get-stream",
-          "version": "8.0.1"
-        },
-        {
           "name": "extend",
           "version": "3.0.2"
-        },
-        {
-          "name": "get-stream",
-          "version": "5.2.0"
         },
         {
           "name": "fd-slicer",
@@ -513,7 +501,15 @@
         },
         {
           "name": "file-type",
+          "version": "3.9.0"
+        },
+        {
+          "name": "file-type",
           "version": "5.2.0"
+        },
+        {
+          "name": "file-type",
+          "version": "6.2.0"
         },
         {
           "name": "follow-redirects",
@@ -545,11 +541,23 @@
         },
         {
           "name": "get-intrinsic",
-          "version": "1.2.1"
+          "version": "1.2.2"
         },
         {
           "name": "get-package-type",
           "version": "0.1.0"
+        },
+        {
+          "name": "get-stream",
+          "version": "2.3.1"
+        },
+        {
+          "name": "get-stream",
+          "version": "5.2.0"
+        },
+        {
+          "name": "get-stream",
+          "version": "8.0.1"
         },
         {
           "name": "get-symbol-description",
@@ -572,16 +580,16 @@
           "version": "7.0.1"
         },
         {
-          "name": "has",
-          "version": "1.0.4"
-        },
-        {
           "name": "has-bigints",
           "version": "1.0.2"
         },
         {
+          "name": "has-flag",
+          "version": "3.0.0"
+        },
+        {
           "name": "has-property-descriptors",
-          "version": "1.0.0"
+          "version": "1.0.1"
         },
         {
           "name": "has-proto",
@@ -594,6 +602,10 @@
         {
           "name": "has-tostringtag",
           "version": "1.0.0"
+        },
+        {
+          "name": "hasown",
+          "version": "2.0.0"
         },
         {
           "name": "hour-convert",
@@ -609,7 +621,15 @@
         },
         {
           "name": "https-proxy-agent",
+          "version": "5.0.1"
+        },
+        {
+          "name": "https-proxy-agent",
           "version": "7.0.2"
+        },
+        {
+          "name": "iconv-lite",
+          "version": "0.4.24"
         },
         {
           "name": "iconv-lite",
@@ -617,7 +637,7 @@
         },
         {
           "name": "internal-slot",
-          "version": "1.0.5"
+          "version": "1.0.6"
         },
         {
           "name": "interpret",
@@ -641,15 +661,15 @@
         },
         {
           "name": "is-core-module",
-          "version": "2.13.0"
+          "version": "2.13.1"
         },
         {
           "name": "is-date-object",
           "version": "1.0.5"
         },
         {
-          "name": "is-fullwidth-code-point",
-          "version": "3.0.0"
+          "name": "is-docker",
+          "version": "2.2.1"
         },
         {
           "name": "is-natural-number",
@@ -673,7 +693,15 @@
         },
         {
           "name": "is-stream",
+          "version": "1.1.0"
+        },
+        {
+          "name": "is-stream",
           "version": "2.0.1"
+        },
+        {
+          "name": "is-stream",
+          "version": "3.0.0"
         },
         {
           "name": "is-string",
@@ -701,6 +729,10 @@
         },
         {
           "name": "isarray",
+          "version": "1.0.0"
+        },
+        {
+          "name": "isarray",
           "version": "2.0.5"
         },
         {
@@ -724,12 +756,12 @@
           "version": "1.4.1"
         },
         {
-          "name": "jws",
-          "version": "3.2.2"
-        },
-        {
           "name": "jwa",
           "version": "2.0.0"
+        },
+        {
+          "name": "jws",
+          "version": "3.2.2"
         },
         {
           "name": "jws",
@@ -737,15 +769,7 @@
         },
         {
           "name": "knex",
-          "version": "3.0.1"
-        },
-        {
-          "name": "resolve-from",
-          "version": "5.0.0"
-        },
-        {
-          "name": "lodash",
-          "version": "4.17.21"
+          "version": "3.1.0"
         },
         {
           "name": "lodash.includes",
@@ -776,16 +800,16 @@
           "version": "4.1.1"
         },
         {
+          "name": "lodash",
+          "version": "4.17.21"
+        },
+        {
           "name": "luxon",
-          "version": "3.4.3"
+          "version": "3.4.4"
         },
         {
           "name": "make-dir",
           "version": "1.3.0"
-        },
-        {
-          "name": "pify",
-          "version": "3.0.0"
         },
         {
           "name": "matchit",
@@ -825,7 +849,15 @@
         },
         {
           "name": "ms",
+          "version": "2.0.0"
+        },
+        {
+          "name": "ms",
           "version": "2.1.2"
+        },
+        {
+          "name": "ms",
+          "version": "2.1.3"
         },
         {
           "name": "nanoid",
@@ -852,16 +884,12 @@
           "version": "5.1.0"
         },
         {
-          "name": "path-key",
-          "version": "4.0.0"
-        },
-        {
           "name": "object-assign",
           "version": "4.1.1"
         },
         {
           "name": "object-inspect",
-          "version": "1.13.0"
+          "version": "1.13.1"
         },
         {
           "name": "object-keys",
@@ -869,7 +897,7 @@
         },
         {
           "name": "object.assign",
-          "version": "4.1.4"
+          "version": "4.1.5"
         },
         {
           "name": "on-finished",
@@ -880,8 +908,16 @@
           "version": "6.0.0"
         },
         {
+          "name": "open",
+          "version": "8.4.2"
+        },
+        {
           "name": "path-key",
           "version": "3.1.1"
+        },
+        {
+          "name": "path-key",
+          "version": "4.0.0"
         },
         {
           "name": "path-parse",
@@ -893,31 +929,39 @@
         },
         {
           "name": "pg-connection-string",
-          "version": "2.6.1"
+          "version": "2.6.2"
+        },
+        {
+          "name": "pify",
+          "version": "2.3.0"
+        },
+        {
+          "name": "pify",
+          "version": "3.0.0"
         },
         {
           "name": "pify",
           "version": "5.0.0"
         },
         {
-          "name": "pinkie",
-          "version": "2.0.4"
-        },
-        {
           "name": "pinkie-promise",
           "version": "2.0.1"
+        },
+        {
+          "name": "pinkie",
+          "version": "2.0.4"
         },
         {
           "name": "polka",
           "version": "0.5.2"
         },
         {
-          "name": "process",
-          "version": "0.11.10"
-        },
-        {
           "name": "process-nextick-args",
           "version": "2.0.1"
+        },
+        {
+          "name": "process",
+          "version": "0.11.10"
         },
         {
           "name": "progress",
@@ -933,11 +977,15 @@
         },
         {
           "name": "punycode",
-          "version": "2.3.0"
+          "version": "2.3.1"
         },
         {
           "name": "raw-body",
           "version": "2.5.2"
+        },
+        {
+          "name": "readable-stream",
+          "version": "2.3.8"
         },
         {
           "name": "readable-stream",
@@ -952,12 +1000,20 @@
           "version": "1.5.1"
         },
         {
+          "name": "resolve-from",
+          "version": "5.0.0"
+        },
+        {
           "name": "resolve",
           "version": "1.22.8"
         },
         {
           "name": "safe-array-concat",
           "version": "1.0.1"
+        },
+        {
+          "name": "safe-buffer",
+          "version": "5.1.2"
         },
         {
           "name": "safe-buffer",
@@ -978,6 +1034,10 @@
         {
           "name": "seek-bzip",
           "version": "1.0.6"
+        },
+        {
+          "name": "set-function-length",
+          "version": "1.1.1"
         },
         {
           "name": "set-function-name",
@@ -1012,12 +1072,8 @@
           "version": "1.1.0"
         },
         {
-          "name": "string_decoder",
-          "version": "1.3.0"
-        },
-        {
           "name": "string-width",
-          "version": "4.2.3"
+          "version": "5.1.2"
         },
         {
           "name": "string.prototype.trim",
@@ -1032,8 +1088,16 @@
           "version": "1.0.7"
         },
         {
+          "name": "string_decoder",
+          "version": "1.1.1"
+        },
+        {
+          "name": "string_decoder",
+          "version": "1.3.0"
+        },
+        {
           "name": "strip-ansi",
-          "version": "6.0.1"
+          "version": "7.1.0"
         },
         {
           "name": "strip-bom",
@@ -1048,32 +1112,16 @@
           "version": "3.0.0"
         },
         {
+          "name": "supports-color",
+          "version": "5.5.0"
+        },
+        {
           "name": "supports-preserve-symlinks-flag",
           "version": "1.0.0"
         },
         {
           "name": "tar-stream",
           "version": "1.6.2"
-        },
-        {
-          "name": "bl",
-          "version": "1.2.3"
-        },
-        {
-          "name": "isarray",
-          "version": "1.0.0"
-        },
-        {
-          "name": "readable-stream",
-          "version": "2.3.8"
-        },
-        {
-          "name": "safe-buffer",
-          "version": "5.1.2"
-        },
-        {
-          "name": "string_decoder",
-          "version": "1.1.1"
         },
         {
           "name": "tarn",
@@ -1144,8 +1192,8 @@
           "version": "1.4.3"
         },
         {
-          "name": "buffer",
-          "version": "5.7.1"
+          "name": "undici-types",
+          "version": "5.26.5"
         },
         {
           "name": "unpipe",
@@ -1154,6 +1202,10 @@
         {
           "name": "util-deprecate",
           "version": "1.0.2"
+        },
+        {
+          "name": "uuid",
+          "version": "8.3.2"
         },
         {
           "name": "uuid",
@@ -1173,11 +1225,11 @@
         },
         {
           "name": "which-typed-array",
-          "version": "1.1.11"
+          "version": "1.1.13"
         },
         {
           "name": "wrap-ansi",
-          "version": "7.0.0"
+          "version": "8.1.0"
         },
         {
           "name": "xtend",
@@ -1204,32 +1256,8 @@
           "version": "8.0.2"
         },
         {
-          "name": "glob",
-          "version": "10.3.10"
-        },
-        {
-          "name": "minimatch",
-          "version": "9.0.3"
-        },
-        {
-          "name": "rimraf",
-          "version": "5.0.1"
-        },
-        {
-          "name": "tar",
-          "version": "6.1.13"
-        },
-        {
-          "name": "minipass",
-          "version": "4.2.8"
-        },
-        {
           "name": "chownr",
           "version": "2.0.0"
-        },
-        {
-          "name": "signal-exit",
-          "version": "4.1.0"
         },
         {
           "name": "foreground-child",
@@ -1240,8 +1268,8 @@
           "version": "2.1.0"
         },
         {
-          "name": "minipass",
-          "version": "3.3.6"
+          "name": "glob",
+          "version": "10.3.10"
         },
         {
           "name": "graceful-fs",
@@ -1257,19 +1285,39 @@
         },
         {
           "name": "lru-cache",
+          "version": "10.1.0"
+        },
+        {
+          "name": "lru-cache",
           "version": "6.0.0"
+        },
+        {
+          "name": "minimatch",
+          "version": "9.0.3"
+        },
+        {
+          "name": "minipass",
+          "version": "3.3.6"
+        },
+        {
+          "name": "minipass",
+          "version": "4.2.8"
         },
         {
           "name": "minipass",
           "version": "5.0.0"
         },
         {
+          "name": "minipass",
+          "version": "7.0.4"
+        },
+        {
           "name": "once",
           "version": "1.4.0"
         },
         {
-          "name": "lru-cache",
-          "version": "10.0.1"
+          "name": "rimraf",
+          "version": "5.0.1"
         },
         {
           "name": "semver",
@@ -1278,6 +1326,14 @@
         {
           "name": "setprototypeof",
           "version": "1.2.0"
+        },
+        {
+          "name": "signal-exit",
+          "version": "4.1.0"
+        },
+        {
+          "name": "tar",
+          "version": "6.1.13"
         },
         {
           "name": "tar",
@@ -1328,12 +1384,12 @@
           "version": "9.4.1"
         },
         {
-          "name": "googleapis",
-          "version": "129.0.0"
+          "name": "googleapis-common",
+          "version": "7.0.1"
         },
         {
-          "name": "googleapis-common",
-          "version": "7.0.0"
+          "name": "googleapis",
+          "version": "130.0.0"
         },
         {
           "name": "human-signals",
@@ -1364,10 +1420,6 @@
           "version": "5.1.2"
         },
         {
-          "name": "qs",
-          "version": "6.11.0"
-        },
-        {
           "name": "buffer-equal-constant-time",
           "version": "1.0.1"
         },
@@ -1378,6 +1430,14 @@
         {
           "name": "ieee754",
           "version": "1.2.1"
+        },
+        {
+          "name": "qs",
+          "version": "6.11.0"
+        },
+        {
+          "name": "qs",
+          "version": "6.11.2"
         },
         {
           "name": "sprintf-js",
@@ -1745,14 +1805,14 @@
         "affects": [
           {
             "name": "googleapis",
-            "version": "129.0.0",
+            "version": "130.0.0",
             "flags": {
               "prod": true
             }
           },
           {
             "name": "googleapis-common",
-            "version": "7.0.0",
+            "version": "7.0.1",
             "flags": {
               "prod": true
             }
@@ -1768,7 +1828,7 @@
         "rootDependencies": [
           {
             "name": "googleapis",
-            "version": "129.0.0",
+            "version": "130.0.0",
             "flags": {
               "prod": true
             }
@@ -1802,14 +1862,14 @@
         "affects": [
           {
             "name": "googleapis",
-            "version": "129.0.0",
+            "version": "130.0.0",
             "flags": {
               "prod": true
             }
           },
           {
             "name": "googleapis-common",
-            "version": "7.0.0",
+            "version": "7.0.1",
             "flags": {
               "prod": true
             }
@@ -1825,7 +1885,7 @@
         "rootDependencies": [
           {
             "name": "googleapis",
-            "version": "129.0.0",
+            "version": "130.0.0",
             "flags": {
               "prod": true
             }

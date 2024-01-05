@@ -1,6 +1,8 @@
-import { google } from 'googleapis';
-import { GoogleAuth, JWT } from 'google-auth-library';
 import { readFile } from 'fs/promises';
+import { GoogleAuth, JWT } from 'google-auth-library';
+import { google } from 'googleapis';
+
+import { env } from '../common/util.js';
 
 const scopes = [
   'https://www.googleapis.com/auth/spreadsheets',
@@ -9,18 +11,13 @@ const scopes = [
 ];
 
 let auth;
-if (
-  process.env['GOOGLE_APPLICATION_CREDENTIALS'] !== undefined &&
-  process.env['GOOGLE_APPLICATION_CREDENTIALS'] !== ''
-) {
+if (env('GOOGLE_APPLICATION_CREDENTIALS')) {
   auth = new GoogleAuth({
-    keyFile: process.env['GOOGLE_APPLICATION_CREDENTIALS'],
+    keyFile: env('GOOGLE_APPLICATION_CREDENTIALS'),
     scopes
   });
 } else {
-  const key = JSON.parse(
-    await readFile(process.env['CREDENTIAL_FILE_PATH'] ?? `${process.cwd()}/credentials.json`, 'utf-8')
-  );
+  const key = JSON.parse(await readFile(env('CREDENTIAL_FILE_PATH') ?? `${process.cwd()}/credentials.json`, 'utf-8'));
 
   auth = new JWT({
     email: key.client_email,
