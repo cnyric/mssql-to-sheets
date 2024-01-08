@@ -113,7 +113,9 @@ async function doJob(job: Job, manual: boolean = false) {
   }
 
   for (const task of job?.tasks) {
-    const data = await db(job?.database).raw(task?.query);
+    const data = await db(job?.database)
+      .raw(task?.query)
+      .timeout(1000 * 60 * 5);
     log.debug('doJob', job?.id, task?.id, task?.name);
     await insertSheet(job?.spreadsheetId, task?.name, data, job?.append);
   }
