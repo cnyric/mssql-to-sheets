@@ -2,6 +2,7 @@ import type { Emitter } from 'mitt';
 import type { ILogObj } from 'tslog';
 import type { QueueEvent } from '../api/types.d.ts';
 
+import * as Sentry from '@sentry/node';
 import dayjs from 'dayjs';
 import { config as dotenv } from 'dotenv';
 import { writeFile } from 'fs/promises';
@@ -67,6 +68,7 @@ async function errorHandler(error: Error, source: string) {
   );
 
   log.error(source, error.message, error.stack);
+  Sentry.captureException(error);
 }
 
 function env(key: string): string {

@@ -252,3 +252,6 @@ x64/
 x86/
 ErrorLog.csv
 *.sqlite
+
+# Sentry Config File
+.sentryclirc
